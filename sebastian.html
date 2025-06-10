@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sebastian - Ventrue</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="scripts.js"></script>
+
+  <style>
+    .personagem-container {
+      max-width: 1100px;
+      margin: 10vh auto;
+      display: flex;
+      gap: 2rem;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid #4169e1;
+      border-right: 4px solid #4169e1;
+      box-shadow: 0 0 20px rgba(65, 105, 225, 0.4);
+    }
+
+    .personagem-imagem img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 2px solid #4169e1;
+      object-fit: cover;
+    }
+
+    .personagem-infos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #f0f0f0;
+    }
+
+    .personagem-infos h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.2rem;
+      color: #b0c4de;
+      margin-bottom: 1rem;
+    }
+
+    .personagem-infos p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .clan-symbol {
+      max-width: 100px;
+      margin: 1rem 0;
+    }
+
+    .botao-refugio {
+      margin-top: 2rem;
+    }
+
+    .botao-refugio a {
+      background-color: #4169e1;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel Decorative', serif;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .botao-refugio a:hover {
+      background-color: #1e3d9f;
+    }
+
+    @media (max-width: 768px) {
+      .personagem-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .personagem-imagem img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>Horizonte Carmim</h1>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="elenco_sombrio.html">Elenco Sombrio</a></li>
+        <li><a href="jornal.html">Jornal do Horizonte</a></li>
+        <li><a href="diario.html">Diário de Sangue</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="personagem-container">
+      <div class="personagem-imagem">
+        <img src="img/sebastian.jpeg" alt="Sebastian Ventrue" />
+      </div>
+
+      <div class="personagem-infos">
+        
+
+        <h2>Sebastian</h2>
+
+        <p>
+          Refinado, estratégico e fiel à ordem. Sebastian foi abraçado por Beatriz, uma Condessa Ventrue, 
+          após uma noite chuvosa marcada por teatro, vinho e destino.  
+          Vive há mais de cem anos em Belo Horizonte, mantendo a estrutura social da Camarilla com pulso firme.
+        </p>
+
+        <p><strong>Geração:</strong> 13ª</p>
+        <p><strong>Abraço:</strong> Belo Horizonte, década de 1920</p>
+       
+        <p><strong>Especialidade:</strong> Política, influência social e diplomacia entre feudos</p>
+
+        <div class="botao-refugio">
+          <a href="login_sebastian.html">Refúgio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,589 @@
+/* Reset e estilo base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0f0f0;
+  background: url('img/fundo.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Cabeçalho e menu */
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1rem 2rem;
+}
+
+.subtexto-npc {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.4rem !important;
+  color: #ccc;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  font-size: 2.4rem;
+  font-family: 'Cinzel Decorative', serif;
+  color: #8B0000;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #8B0000;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #f0f0f0;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+}
+
+/* Seção de introdução */
+.intro {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 3rem;
+  max-width: 800px;
+  margin: 10vh auto;
+  border-left: 4px solid #8a2be2;
+  border-right: 4px solid #8a2be2;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d0bdf4;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e8e8e8;
+}
+
+/* Página Personagens */
+.galeria {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.galeria h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #d0bdf4;
+}
+
+.mural {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mural-personagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mural-personagens .card {
+  width: 180px;
+}
+
+/* Elemento invisível que força quebra de linha */
+.mural-personagens .quebra-linha {
+  flex-basis: 100%;
+  height: 0;
+}
+
+
+
+
+.card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #8a2be2;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #8a2be2;
+}
+
+.card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border-bottom: 2px solid #8a2be2;
+  border-radius: 5px 5px 0 0;
+}
+
+.card span {
+  display: block;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #f0f0f0;
+  letter-spacing: 0.5px;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+/* Estilo do Jornal do Horizonte */
+.jornal {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: #fff;
+  color: #111;
+  border-radius: 8px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cabecalho-jornal {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cabecalho-jornal h2 {
+  font-size: 2.4rem;
+  color: #222;
+}
+
+.cabecalho-jornal p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Grade com notícia grande + laterais */
+.grade-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.noticia-grande, .noticia-lateral {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.noticia-grande img, .noticia-lateral img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.noticia-grande h3, .noticia-lateral h4 {
+  margin: 0.75rem;
+  color: #222;
+}
+
+.noticia-grande p, .noticia-lateral p {
+  margin: 0 0.75rem 0.75rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Cards menores de notícia */
+.noticias-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-noticia {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-noticia img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+}
+
+.card-noticia h4 {
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.card-noticia p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 8px;
+  color: #111;
+  font-family: 'Roboto', sans-serif;
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #8B0000;
+}
+
+.modal-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.fechar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: #000;
+}
+.botao-voltar {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.botao-voltar a {
+  background-color: #8B0000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Cinzel Decorative', serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.botao-voltar a:hover {
+  background-color: #a80000;
+}
+/* Mural de NPCs - Elenco Sombrio */
+.titulo-npc {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.2rem;
+  color: #a259ff;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.subtexto-npc {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.npc-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.npc-card {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 1px solid #8a2be2;
+  border-radius: 8px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.npc-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.npc-card span {
+  display: block;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.botao-voltar {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.botao-voltar a {
+  color: #8a2be2;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+/* Estilo para Elenco Sombrio */
+.mural-npcs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 200px));
+  gap: 1rem; /* se quiser deixar ainda mais justinho */
+  justify-content: center;
+}
+
+
+.npc-card {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid #8a2be2;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.npc-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #8a2be2;
+}
+
+.npc-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #8a2be2;
+}
+
+.npc-card span {
+  display: block;
+  padding: 0.5rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.95rem;
+  color: #f0f0f0;
+}
+
+.botao-voltar {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.botao-voltar a {
+  background-color: #8B0000;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Cinzel Decorative', serif;
+  transition: background 0.3s;
+}
+
+.botao-voltar a:hover {
+  background-color: #a70000;
+}
+.mural-resumos {
+  max-width: 900px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.resumo-sessao {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-left: 4px solid #8a2be2;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.resumo-sessao h3 {
+  font-family: 'Cinzel Decorative', serif;
+  color: #d0bdf4;
+  margin-bottom: 0.8rem;
+}
+
+.resumo-sessao p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.titulo-pagina,
+.titulo-npc {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.2rem;
+  color: #a259ff;
+  text-align: center;
+  margin-top: 2rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.personagem-detalhe {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 10vh auto;
+  max-width: 800px;
+  padding: 2rem;
+  border-left: 4px solid #8a2be2;
+  border-right: 4px solid #8a2be2;
+  border-radius: 10px;
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.imagem-clan img {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+
+.dados-personagem {
+  margin-top: 2rem;
+  text-align: left;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+.dados-personagem p {
+  margin-bottom: 0.5rem;
+}
+
+.botao-refugio {
+  margin-top: 2rem;
+}
+
+.botao-refugio a {
+  background-color: #8B0000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Cinzel Decorative', serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.botao-refugio a:hover {
+  background-color: #a80000;
+}
+@media (max-width: 600px) {
+  .mural-personagens {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mural-personagens .card {
+    width: 90%;
+    max-width: 280px;
+  }
+
+  .mural-personagens .quebra-linha {
+    display: none; /* não precisa de quebra manual no empilhamento vertical */
+  }
+}

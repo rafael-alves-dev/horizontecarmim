@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refúgio da Margot - Acesso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cinzel Decorative', cursive;
+      background: url('img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0e6ff;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 12vh auto;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-left: 4px solid #4b0082;
+      border-right: 4px solid #4b0082;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(75, 0, 130, 0.5);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #d8c4ff;
+    }
+
+    .clan-label {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #bca0f8;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #4b0082;
+      border-radius: 5px;
+      background-color: #1e1e2e;
+      color: #f0e6ff;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #4b0082;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6930c3;
+    }
+
+    .erro {
+      margin-top: 1rem;
+      color: #ff8c8c;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Entrada no Refúgio</h2>
+    <div class="clan-label">Clã Lasombra</div>
+    <form id="loginForm">
+      <label for="username">Eco das Sombras</label>
+      <input type="text" id="username" name="username" placeholder="Nome de Sangue" required />
+
+      <label for="password">Chave Obscura</label>
+      <input type="password" id="password" name="password" placeholder="Permissão sombria" required />
+
+      <button type="submit">Atravessar o Véu</button>
+      <div id="erro" class="erro"></div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const usuario = document.getElementById("username").value.toLowerCase();
+      const senha = document.getElementById("password").value;
+
+      if (usuario === "ivan" && senha === "ecoescuro") {
+        window.location.href = "refugio_margot.html";
+      } else {
+        document.getElementById("erro").innerText = "A escuridão não te reconhece. Verifique sua identidade.";
+      }
+    });
+  </script>
+</body>
+</html>

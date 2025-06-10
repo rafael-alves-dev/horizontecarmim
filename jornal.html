@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornal do Horizonte | Horizonte Carmim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../scripts.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Horizonte Carmim</h1>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="elenco_sombrio.html">Elenco Sombrio</a></li>
+        <li><a href="jornal.html">Jornal do Horizonte</a></li>
+        <li><a href="diario.html">Diário de Sangue</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="jornal">
+    <section class="cabecalho-jornal">
+      <h2>Jornal do Horizonte</h2>
+      <p>Seu canal de notícias em tempo real sobre a capital mineira</p>
+    </section>
+
+    <section class="grade-principal">
+      <div class="noticia-grande" onclick="abrirModal('noticia1')">
+        <img src="../img/noticia_1.jpg" alt="Tremores na Savassi">
+        <h3>Tremores assustam moradores da Savassi</h3>
+        <p>Especialistas seguem sem explicações para os abalos na região centro-sul de BH. Rumores apontam fenômenos subterrâneos.</p>
+      </div>
+
+      <div class="noticia-lateral" onclick="abrirModal('noticia2')">
+        <img src="../img/noticia_2.jpg" alt="Galeria subterrânea interditada">
+        <h4>Galeria subterrânea é interditada após desabamento</h4>
+        <p>Testemunhas relataram sons estranhos antes do desabamento. Corpo de Bombeiros investiga o local.</p>
+      </div>
+
+      <div class="noticia-lateral" onclick="abrirModal('noticia3')">
+        <img src="../img/noticia_3.jpg" alt="Milagre na capela">
+        <h4>Capela antiga atrai fiéis após 'milagre' na madrugada</h4>
+        <p>Moradores caminharam até a antiga capela às 3h da manhã. Fenômeno ainda sem explicação religiosa ou científica.</p>
+      </div>
+    </section>
+
+    <section class="noticias-lista">
+      <article class="card-noticia" onclick="abrirModal('noticia4')">
+        <img src="../img/noticia_4.jpg noticias_jornal/noticia_4.jpg" alt="Símbolo misterioso">
+        <h4>Símbolo misterioso é encontrado em fonte histórica</h4>
+        <p>Antigos mapas indicam passagens subterrâneas ligadas a cerimônias religiosas e desaparecimentos do século XVIII.</p>
+      </article>
+
+      <article class="card-noticia" onclick="abrirModal('noticia5')">
+        <img src="../img/noticia_5.jpg" alt="Luzes na serra">
+        <h4>Luzes estranhas são vistas na Serra do Curral</h4>
+        <p>Testemunhas afirmam que luzes dançavam no céu e sumiram entre as pedras. Militares negam exercícios naquela noite.</p>
+      </article>
+
+      <article class="card-noticia" onclick="abrirModal('noticia6')">
+        <img src="../img/noticia_6.jpg" alt="Vozes na UFMG">
+        <h4>Vozes são ouvidas durante aula noturna na UFMG</h4>
+        <p>Estudantes relatam sussurros vindos dos corredores vazios. Administração da universidade nega qualquer anormalidade.</p>
+      </article>
+    </section>
+  </main>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="fechar" onclick="fecharModal()">&times;</span>
+      <div id="conteudo-modal"></div>
+    </div>
+  </div>
+  <div class="botao-voltar">
+  <a href="../index.html">← Voltar para a página inicial</a>
+</div>
+
+</body>
+</html>

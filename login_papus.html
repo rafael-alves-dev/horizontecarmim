@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login do Refúgio de Papus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url('img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .login-box {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #8a2be2;
+      border-right: 4px solid #8a2be2;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-box h2 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #d0bdf4;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: #8a2be2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .login-box button:hover {
+      background-color: #6d1dbb;
+    }
+
+    .mensagem-erro {
+      color: #ff6666;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  </style>
+
+  <script>
+    function verificarLogin(event) {
+      event.preventDefault();
+
+      const usuario = document.getElementById('usuario').value.trim();
+      const senha = document.getElementById('senha').value.trim();
+      const erro = document.getElementById('mensagem-erro');
+
+      const usuarioCorreto = 'arcanus';
+      const senhaCorreta = 'voxarcana';
+
+      if (usuario === usuarioCorreto && senha === senhaCorreta) {
+        window.location.href = 'refugio_papus.html';
+      } else {
+        erro.textContent = 'Selo inválido. A Capela não reconhece sua essência.';
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <form class="login-box" onsubmit="verificarLogin(event)">
+    <h2>Acesso Ritualístico</h2>
+    <input type="text" id="usuario" placeholder="Identificação Arcana" required />
+    <input type="password" id="senha" placeholder="Palavra de Sangue" required />
+    <button type="submit">Invocar Refúgio</button>
+    <div id="mensagem-erro" class="mensagem-erro"></div>
+  </form>
+</body>
+</html>

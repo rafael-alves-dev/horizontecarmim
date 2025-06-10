@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eleonora Castellane</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: #111 url('../img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.6); /* mais translúcido */
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 3px solid #8a2be2;
+      border-right: 3px solid #8a2be2;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.3); /* roxo V5 */
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.5rem;
+      color: #c92020;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .perfil {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .imagem-container {
+      flex: 1;
+      text-align: center;
+    }
+
+    .imagem-retrato {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid #8a2be2;
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .imagem-retrato:hover {
+      transform: scale(1.03);
+    }
+
+    .descricao {
+      flex: 2;
+    }
+
+    .descricao p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .galeria {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .galeria img {
+      width: 28%;
+      max-width: 260px;
+      border-radius: 8px;
+      border: 2px solid #444;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.04);
+      border-color: #8a2be2;
+    }
+
+    .botao-voltar {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .botao-voltar a {
+      background-color: #8a2be2;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel Decorative', serif;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .botao-voltar a:hover {
+      background-color: #a259ff;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+    }
+
+    .modal-conteudo {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #fff;
+      border: 2px solid white;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #f0f0f0;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .perfil {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .galeria img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Celeste Deveras</h1>
+
+    <div class="perfil">
+      <div class="imagem-container">
+        <img src="../img/celeste_original.png" alt="celeste" class="imagem-retrato" onclick="abrirModal(this)">
+      </div>
+
+      <div class="descricao">
+        <p>
+          
+Clã: Toreador <br>
+Cargo: Guardiã do Elísio<br>
+Alcunha: A Senhora dos Espelhos<br><br>
+
+Descrição pública:<br>
+
+Celeste Deveras é presença marcante em qualquer salão, mas no Elísio… ela reina. Sua beleza é notória, sua voz hipnótica, e seu gosto impecável por estética a tornou uma das figuras mais respeitadas (e temidas) entre os Membros da Camarilla de Belo Horizonte.<br>
+
+Como Guardiã do Elísio, é ela quem assegura a neutralidade dos encontros formais, e o faz com elegância quase teatral. Cada evento sob sua supervisão se transforma num espetáculo — de luz, sombras, figurinos e silêncios carregados. Mas por trás dos sorrisos, há olhos que tudo observam… e mãos que não hesitam em fechar as cortinas quando necessário.<br>
+
+Diz-se que Celeste já causou a ruína de Membros que ousaram quebrar a Máscara durante seus eventos. Não com violência — mas com palavras certeiras, olhares cortantes e exílio social irreversível. Ela não é uma guerreira da carne, mas uma estrategista do gosto, da influência e da reputação.<br>
+
+Seu refúgio é quase uma lenda urbana entre os neófitos: uma galeria secreta onde obras de arte contemporânea dividem espaço com esculturas de beleza duvidosa… e corpos que parecem realmente petrificados.<br><br>
+
+No fim das contas, Celeste não protege apenas o Elísio. Ela protege a estética da própria Camarilla.
+
+
+        </p>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <img src="../img/celeste.png" alt="Foto 1" onclick="abrirModal(this)">
+      <img src="../img/celeste2.png" alt="Foto 2" onclick="abrirModal(this)">
+      <img src="../img/celeste4.png" alt="Foto 3" onclick="abrirModal(this)">
+    </div>
+
+    <div class="botao-voltar">
+      <a href="../elenco_sombrio.html">← Voltar</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalImagem" class="modal">
+    <span class="fechar" onclick="fecharModal()">&times;</span>
+    <img class="modal-conteudo" id="imagemAmpliada">
+  </div>
+
+  <script>
+    function abrirModal(img) {
+      const modal = document.getElementById("modalImagem");
+      const modalImg = document.getElementById("imagemAmpliada");
+      modalImg.src = img.src;
+      modal.style.display = "block";
+    }
+
+    function fecharModal() {
+      document.getElementById("modalImagem").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalImagem");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

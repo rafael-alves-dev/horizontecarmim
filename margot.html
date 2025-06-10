@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elena - Lasombra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Cinzel Decorative', cursive;
+      color: #f0f0f0;
+    }
+
+    .personagem-container {
+      max-width: 1100px;
+      margin: 10vh auto;
+      display: flex;
+      gap: 2rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 2rem;
+      border-radius: 12px;
+      border-left: 4px solid #4b0082;
+      border-right: 4px solid #4b0082;
+      box-shadow: 0 0 20px rgba(75, 0, 130, 0.4);
+    }
+
+    .personagem-imagem img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 8px;
+      border: 2px solid #4b0082;
+      object-fit: cover;
+    }
+
+    .personagem-infos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .personagem-infos h2 {
+      font-size: 2.2rem;
+      color: #c8a2c8;
+      margin-bottom: 1rem;
+    }
+
+    .personagem-infos p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .clan-symbol {
+      max-width: 100px;
+      margin: 1rem 0;
+    }
+
+    .botao-refugio {
+      margin-top: 2rem;
+    }
+
+    .botao-refugio a {
+      background-color: #4b0082;
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel Decorative', serif;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .botao-refugio a:hover {
+      background-color: #5e2a94;
+    }
+
+    @media (max-width: 768px) {
+      .personagem-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .personagem-imagem img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Horizonte Carmim</h1>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="elenco_sombrio.html">Elenco Sombrio</a></li>
+        <li><a href="jornal.html">Jornal do Horizonte</a></li>
+        <li><a href="diario.html">Diário de Sangue</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="personagem-container">
+      <div class="personagem-imagem">
+        <img src="img/margot.jpeg" alt="Margot - Lasombra" />
+      </div>
+
+      <div class="personagem-infos">
+              <h2>Margot</h2>
+        <p>
+        
+Clã: Lasombra<br>
+Alinhamento: Camarilla<br>
+Vínculos: Irmã de Mirela Sangrimor<br><br>
+
+Margot é uma Lasombra recente, movida pela busca incansável por sua irmã desaparecida. Seu Abraço foi motivado por amor, dor e obsessão por respostas. Embora sua presença seja carismática e misteriosa, pouco se sabe sobre suas verdadeiras intenções. O que é certo: Margot não veio a Belo Horizonte por acaso. Ela está aqui por alguém — ou por algo — que ainda permanece nas sombras.
+        </p>
+        <div class="botao-refugio">
+          <a href="login_margot.html">Refúgio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

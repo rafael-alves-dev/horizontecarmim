@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elenco Sombrio | Horizonte Carmim</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../scripts.js"></script>
+  <style>
+    .galeria {
+      text-align: center;
+    }
+
+    .galeria h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.5rem;
+      color: #a259ff;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .subtexto-npc {
+      max-width: 800px;
+      margin: 1rem auto 3rem;
+      color: #ccc;
+      text-align: center;
+    }
+
+    .categoria-npcs {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.8rem;
+      color: #8B0000;
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .mural-npcs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .npc-card {
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid #8a2be2;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      width: 150px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .npc-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #8a2be2;
+    }
+
+    .npc-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #8a2be2;
+    }
+
+    .npc-card span {
+      display: block;
+      padding: 0.5rem;
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.95rem;
+      color: #f0f0f0;
+    }
+
+    .botao-voltar {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .botao-voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel Decorative', serif;
+      transition: background 0.3s;
+    }
+
+    .botao-voltar a:hover {
+      background-color: #a70000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Horizonte Carmim</h1>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="lore.html">Lore</a></li>
+        <li><a href="personagens.html">Personagens</a></li>
+        <li><a href="elenco_sombrio.html">Elenco Sombrio</a></li>
+        <li><a href="jornal.html">Jornal do Horizonte</a></li>
+        <li><a href="diario.html">Diário de Sangue</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="galeria">
+    <h2>Elenco Sombrio</h2>
+    <p class="subtexto-npc">
+      Aqui estão reunidos os principais NPCs que movimentam as engrenagens ocultas de Belo Horizonte. Divididos entre a Camarilla, os Anarquistas e entidades independentes, eles são peças-chave nos bastidores da noite.
+    </p>
+
+    <h3 class="categoria-npcs">Camarilla</h3>
+<section class="mural-npcs">
+  <div class="npc-card">
+    <a href="Camarilla/doralice.html">
+      <img src="img/Doralice.png" alt="Doralice de Mourão">
+      <span>Doralice de Mourão</span>
+    </a>
+  </div>
+  <div class="npc-card">
+    <a href="Camarilla/arnaldo.html">
+      <img src="img/arnaldo.png" alt="Arnaldo Esteves">
+      <span>Arnaldo Esteves</span>
+    </a>
+  </div>
+  <div class="npc-card">
+    <a href="Camarilla/beatriz.html">
+      <img src="img/beatriz.png" alt="Beatriz 'Ferrugem'">
+      <span>Beatriz "Ferrugem"</span>
+    </a>
+  </div>
+  <div class="npc-card">
+    <a href="Camarilla/celeste.html">
+      <img src="img/celeste.png" alt="Celeste Deveras">
+      <span>Celeste Deveras</span>
+    </a>
+  </div>
+  <div class="npc-card">
+    <a href="Camarilla/icaro.html">
+      <img src="img/Icaro_menezes.png" alt="Ícaro Menezes">
+      <span>Ícaro Menezes</span>
+    </a>
+  </div>
+  <div class="npc-card">
+    <a href="Camarilla/severino.html">
+      <img src="img/severino.png" alt="Severino Magro">
+      <span>Severino Magro</span>
+    </a>
+  </div>
+  <div class="npc-card">
+    <a href="Camarilla/eleonora.html">
+      <img src="img/eleonora1.png" alt="Eleonora Castellane">
+      <span>Eleonora Castellane</span>
+    </a>
+  </div>
+</section>
+
+    
+    <h3 class="categoria-npcs">Anarquistas</h3>
+    <section class="mural-npcs">
+      <div class="npc-card">
+        <img src="img/nocivo.png" alt="Nocivo">
+        <span>Nocivo</span>
+      </div>
+      <div class="npc-card">
+        <img src="img/jenifer.jpeg" alt="Jeniffer">
+        <span>Jeniffer</span>
+      </div>
+    </section>
+
+    <h3 class="categoria-npcs">Outros</h3>
+    
+
+    <div class="botao-voltar">
+      <a href="../index.html">← Voltar para a página inicial</a>
+    </div>
+  </main>
+</body>
+</html>
