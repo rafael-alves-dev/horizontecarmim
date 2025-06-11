@@ -238,7 +238,7 @@ nav ul li a:hover {
 }
 
 .noticia-grande, .noticia-lateral {
-  background-color: #f9f9f9;
+  background-color: #d6c6aea4;
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
@@ -314,7 +314,7 @@ nav ul li a:hover {
   background-color: #fefefe;
   margin: 10% auto;
   padding: 2rem;
-  border: 1px solid #888;
+  border: 1px solid #0e0c0c;
   width: 90%;
   max-width: 600px;
   border-radius: 8px;
@@ -473,14 +473,22 @@ nav ul li a:hover {
 
 .botao-voltar a {
   background-color: #8B0000;
-  color: white;
-  padding: 0.7rem 1.2rem;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   font-family: 'Cinzel Decorative', serif;
-  transition: background 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+  display: inline-block;
 }
+
+.botao-voltar a:hover {
+  background-color: #a80000;
+}
+
+
 
 .botao-voltar a:hover {
   background-color: #a70000;
@@ -608,4 +616,144 @@ nav ul li a:hover {
   background-color: #222;
   color: #fff;
   border-color: #888;
+}
+/* Imagens de notícias padronizadas (cards pequenos, laterais e grandes) */
+.noticia-grande img,
+.noticia-lateral img,
+.card-noticia img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Responsividade: ajuste para telas menores */
+@media (max-width: 768px) {
+  .noticia-grande img,
+  .noticia-lateral img,
+  .card-noticia img {
+    height: 160px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}
+/* ==== Imagens padronizadas para cards de notícia ==== */
+.noticia-grande img,
+.noticia-lateral img,
+.card-noticia img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px; /* Arredondamento sutil e consistente */
+}
+
+
+
+/* Responsividade para dispositivos menores */
+@media (max-width: 768px) {
+  .noticia-grande img,
+  .noticia-lateral img,
+  .card-noticia img {
+    aspect-ratio: 1 / 1;
+  }
+
+  
+}
+
+/* Padronização e espaçamento harmonioso para cards */
+.card-noticia {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #c4b07bab;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-noticia h4 {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.card-noticia p {
+  font-size: 0.95rem;
+  color: #363434;
+  line-height: 1.4;
+}
+/* Força todas as imagens de notícias a manterem a mesma proporção e preenchimento */
+.noticia-grande img,
+.noticia-lateral img,
+.card-noticia img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Remove exceções específicas para "alt='Política'" */
+.noticia-lateral img[alt="Política"] {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  padding: 0;
+  background-color: transparent;
+}
+.widget-clima {
+  background-color: #f9f9f9;
+  color: #111;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Para ocupar o espaço à direita da notícia grande */
+.grade-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+.grade-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.coluna-esquerda {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.coluna-direita {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.widget-clima {
+  background-color: #f9f9f9;
+  color: #111;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

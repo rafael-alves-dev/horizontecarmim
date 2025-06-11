@@ -17,20 +17,20 @@ const noticias = {
     corpo: "A galeria na região central foi interditada após estranhos colapsos internos. Símbolos antigos foram encontrados nas paredes. A área segue isolada pelas autoridades."
   },
   noticia3: {
-    titulo: "Capela antiga atrai fiéis após 'milagre' na madrugada",
-    corpo: "Uma névoa espessa envolveu a capela às 3h da manhã, formando brevemente um símbolo no altar. Fiéis acreditam que foi uma manifestação divina. A diocese não comentou."
+    titulo: "Depoimento de Bolsonaro ao STF",
+    corpo: "Denúncia da PGR apontou ex-presidente Jair Bolsonaro como líder de organização criminosa que planejou suposta tentativa de golpe de Estado em 2022"
   },
   noticia4: {
-    titulo: "Símbolo misterioso é encontrado em fonte histórica",
-    corpo: "A fonte do bairro Lagoinha exibe marcas que lembram alfabetos antigos e rituais ocultistas. Historiadores tentam decifrar sua origem. A prefeitura lacrou o local."
+    titulo: "Atlético Mineiro",
+    corpo: "Joia do Atlético deve fazer primeira partida oficial após diagnóstico de problema no coração."
   },
   noticia5: {
     titulo: "Luzes estranhas são vistas na Serra do Curral",
     corpo: "Um grupo de trilheiros viu luzes circulares se movendo em padrões. Um deles desapareceu por horas e voltou desorientado, falando em 'vozes da terra'."
   },
   noticia6: {
-    titulo: "Vozes são ouvidas durante aula noturna na UFMG",
-    corpo: "Alunos da pós-graduação relataram murmúrios em uma ala abandonada do campus. A administração investigou, mas nada foi encontrado. Relatos continuam."
+    titulo: "Temperaturas devem despencar em BH nos próximos dias, com previsão de frio recorde",
+    corpo: "Belo Horizonte e região metropolitana devem enfrentar os dias mais frios do ano até o momento, com a possibilidade de recorde de temperatura mínima em 2025. Conforme o Instituto Nacional de Meteorologia (Inmet), os termômetros podem chegar a 7°C na sexta-feira (13), valor inferior ao registrado nos dias mais frios do ano até agora, em 16 e 20 de maio, quando fez 12,1°C."
   }
 };
 
