@@ -256,13 +256,19 @@ Sua interpretação pode salvar — ou condenar — teu círculo.</p>
 
       <div class="formulario">
         <h2>Correio da Noite</h2>
-        <form>
-          <input type="text" placeholder="Seu nome" required>
-          <input type="text" placeholder="Destinatário" required>
-          <textarea rows="4" placeholder="Mensagem..." required></textarea>
-          <input type="file">
-          <button type="submit">Enviar Bilhete</button>
-        </form>
+        <form action="https://formsubmit.co/rafaelalves013@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://rafael-alves-dev.github.io/horizontecarmim/obrigadov5.html">
+
+  
+  <input type="text" name="nome" placeholder="Seu nome" required>
+  <input type="text" name="destinatario" placeholder="Destinatário" required>
+  <textarea name="mensagem" rows="4" placeholder="Mensagem..." required></textarea>
+  <input type="file" name="anexo">
+  
+  <button type="submit">Enviar Bilhete</button>
+</form>
+
       </div>
     </div>
 
