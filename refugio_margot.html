@@ -4,204 +4,332 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Refúgio de Margot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
       background: url('img/fundo.png') no-repeat center center fixed;
       background-size: cover;
-      color: #f8f8f8;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 3rem 2rem;
+      color: #f0f0f0;
     }
 
-    .refugio-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background: linear-gradient(to right, rgba(15, 15, 15, 0.95), rgba(30, 0, 40, 0.9));
+    .refugio {
+      max-width: 1100px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
       padding: 2rem;
       border-radius: 12px;
-      border-left: 5px solid #8b0000;
-      border-right: 5px solid #8b0000;
-      box-shadow: 0 0 25px rgba(139, 0, 0, 0.7);
+      border: 2px solid #8a2be2;
     }
 
-    .refugio-container h2 {
+    h1 {
       font-family: 'Cinzel Decorative', serif;
-      color: #ffffff;
-      font-size: 2.2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-      text-shadow: 2px 2px 8px #000000;
-    }
-
-    .imagem-personagem {
+      color: #d0bdf4;
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .imagem-personagem img {
-      width: 250px;
-      max-width: 100%;
-      border-radius: 8px;
-      border: 2px solid #8b0000;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
 
-    .secao {
-      margin-bottom: 2.5rem;
-      background-color: rgba(255, 255, 255, 0.04);
-      border-left: 4px solid #8b0000;
-      padding: 1.5rem;
+    .foto-principal {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .foto-principal img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #8a2be2;
+    }
+
+    .textos {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .bloco {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-left: 3px solid #8a2be2;
       border-radius: 8px;
     }
 
-    .secao h3 {
+    .bloco h2 {
       font-family: 'Cinzel Decorative', serif;
-      color: #ff4c4c;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 1px 1px 5px #000000;
+      font-size: 1.2rem;
+      color: #d0bdf4;
+      margin-bottom: 0.5rem;
     }
 
-    .secao p {
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: #e0e0e0;
-    }
-
-    .botao-voltar {
-      text-align: center;
+    .galeria {
       margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
     }
 
-    .botao-voltar a {
-      background-color: #8b0000;
+    .galeria img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid #8a2be2;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.1);
+    }
+
+    .correio {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .mensagens,
+    .formulario {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .mensagens h2,
+    .formulario h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: #d0bdf4;
+      margin-bottom: 1rem;
+    }
+
+    .mensagens button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.6rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 0.8rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .formulario input[type="file"] {
+      border: none;
+    }
+
+    .formulario button {
+      background-color: #8a2be2;
       color: white;
-      padding: 0.8rem 1.3rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
       font-family: 'Cinzel Decorative', serif;
-      transition: background 0.3s ease;
     }
 
-    .botao-voltar a:hover {
-      background-color: #a10000;
+    .voltar a:hover {
+      background-color: #a70000;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 3px solid #8a2be2;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      animation: zoomIn 0.3s ease-out;
+      cursor: zoom-out;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
     }
 
     @media (max-width: 768px) {
-      body {
-        padding: 2rem 1rem;
+      .topo, .correio {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .refugio-container {
-        padding: 1.5rem;
+      .textos {
+        width: 100%;
       }
 
-      .refugio-container h2 {
-        font-size: 1.7rem;
-      }
-
-      .secao h3 {
-        font-size: 1.3rem;
-      }
-
-      .secao p {
-        font-size: 1rem;
-      }
-
-      .botao-voltar a {
-        font-size: 0.95rem;
-        padding: 0.6rem 1rem;
+      .galeria {
+        flex-wrap: wrap;
       }
     }
   </style>
 </head>
-
 <body>
-  <div class="refugio-container">
-    <h2>Refúgio de Margot</h2>
+  <div class="refugio">
+    <h1>Refúgio de Margot</h1>
 
-    <!-- FOTO DA PERSONAGEM -->
-    <div class="imagem-personagem">
-      <img src="img/margot.jpeg" alt="Margot Lasombra">
+    <div class="topo">
+      <div class="foto-principal">
+        <img src="img/margot.jpeg" alt="Margot">
+      </div>
+
+      <div class="textos">
+        <div class="bloco">
+          <h2>Entre Sombras e Laços</h2>
+          <p>“Confio na minha irmã como confio em mim mesma.”<br><br>
+
+“Ivan me mostrou o caminho, mas fui eu quem decidiu seguir.”<br><br>
+
+“As sombras não são maldição. São ferramentas. São olhos. São escudos.”<br><br>
+
+“Na escuridão, todos revelam quem realmente são.”</p>
+        </div>
+        <div class="bloco">
+          <h2>Palavras do Mestre</h2>
+          <p>Margot, tua chegada abalou peças silenciosas no tabuleiro da cidade. <br>
+A Camarilla te observa com atenção, mas os Anarquistas te veem como ponte — ou ameaça.<br>
+Em breve, uma figura do passado de Ivan te procurará...<br>
+Esteja pronta para escolher entre preservar teus laços — ou romper com todos eles.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- HISTÓRIA COMPLETA -->
-    <div class="secao">
-      <h3>Fragmento da História</h3>
-      <p>
-        Parte 1 – A ligação entre as irmãs<br>
+    <div class="galeria">
+      <img src="img/margot1.jpeg" alt="Foto 1" onclick="ampliarImagem(this)">
+      <img src="img/margot2.jpeg" alt="Foto 2" onclick="ampliarImagem(this)">
+      <img src="img/margot3.jpeg" alt="Foto 3" onclick="ampliarImagem(this)">
+    </div>
 
-Mirela sempre foi a filha estranha da família. A irmã mais velha, silenciosa, de uma inteligência inquietante, com um olhar que parecia enxergar além do que os outros podiam perceber. Desde pequena, ela murmurava palavras em línguas desconhecidas, falava de coisas que pareciam impossíveis para uma criança. Passava horas lendo livros sem título, escondidos sob o assoalho do quarto, e passava noites desenhando símbolos estranhos na janela embaçada. <br>
+    <div class="correio">
+      <div class="mensagens">
+        <h2>Mensagens Recebidas</h2>
+        <button onclick="alert('De Samuel:\nOs olhos que te observam não são mortais.')">De: Samuel</button>
+        <button onclick="alert('De Ícaro:\nAlgo se move sob o campus da UFMG.')">De: Ícaro</button>
+        <button onclick="alert('De Elena:\nO espelho que deixei reflete mais que sua imagem.')">De: Elena</button>
+      </div>
 
+      <div class="formulario">
+        <h2>Correio da Noite</h2>
+        <form action="https://formsubmit.co/rafaelalves013@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_next" value="https://seusite.com/obrigadov5.html">
+  
+  <input type="text" name="nome" placeholder="Seu nome" required>
+  <input type="text" name="destinatario" placeholder="Destinatário" required>
+  <textarea name="mensagem" rows="4" placeholder="Mensagem..." required></textarea>
+  <input type="file" name="anexo">
+  
+  <button type="submit">Enviar Bilhete</button>
+</form>
+
+      </div>
+    </div>
+
+    <div class="historia-completa">
+  <h2>História Completa</h2>
+  <p>
+    Parte 1 – A ligação entre as irmãs<br>
+Mirela sempre foi a filha estranha da família. A irmã mais velha, silenciosa, de uma inteligência inquietante, com um olhar que parecia enxergar além do que os outros podiam perceber. Desde pequena, ela murmurava palavras em línguas desconhecidas, falava de coisas que pareciam impossíveis para uma criança. Passava horas lendo livros sem título, escondidos sob o assoalho do quarto, e passava noites desenhando símbolos estranhos na janela embaçada.<br>
 Margot, a irmã mais nova, era seu oposto: vibrante, direta e cheia de vida. Ela nunca entendeu o mundo estranho de Mirela, mas a amava com toda sua força. Quando os outros zombavam ou ignoravam Mirela, Margot a defendia sem hesitar. E quando Mirela desaparecia por horas, era Margot quem ficava acordada, esperando silenciosamente que a irmã voltasse. Essa ligação, forte e silenciosa, parecia inquebrável.<br><br>
 
 Parte 2 – O desaparecimento<br>
-
 Mas então, Mirela desapareceu.<br>
-
 Não houve aviso, nem carta, nem despedida. A família tentou seguir em frente, fingindo que era uma fuga voluntária, um momento ruim que ela precisava para si. Mas Margot não acreditou em nenhuma dessas versões. Sentia, em seu âmago, que algo mais sombrio e profundo havia acontecido. Uma sensação quase doente de que Mirela ainda estava viva, mas perdida em um mundo do qual não podia sair sozinha.<br>
-
 Movida pela dor e pela obsessão, Margot vasculhou o quarto da irmã, encontrou cadernos com anotações cifradas, símbolos que a levavam para círculos ocultos, fóruns secretos e histórias sussurradas sobre seitas antigas e sociedades misteriosas. Ela sabia que não era apenas uma fuga — era uma jornada para um outro mundo, um mundo que a irmã tinha atravessado.<br><br>
 
 Parte 3 – A descoberta e o abraço do Lasombra<br>
-
 Enquanto Margot mergulhava cada vez mais fundo na busca pela irmã desaparecida, o mundo oculto dos vampiros começou a se revelar. Ela não tinha preferência por clãs — seu único desejo era encontrar Mirela e entender a verdade por trás do desaparecimento.<br>
-
 Em meio a suas pesquisas, Margot conheceu Ivan, um Lasombra misterioso e poderoso, senhor das sombras e mestre da manipulação. Ivan não era o tipo de vampiro que Margot esperava, mas sua presença era magnética e sua aura carregava uma força que ela não conseguia ignorar.<br>
-
 Conforme o tempo passou, Margot e Ivan se aproximaram. Entre as sombras e os segredos, nasceu uma conexão profunda e inesperada — um amor que foi crescendo na escuridão. Quando Ivan lhe ofereceu o Abraço, Margot não hesitou. Aceitou se tornar uma Lasombra não só para obter o poder que precisava para enfrentar aquele mundo sombrio, mas porque confiava e amava Ivan.<br>
-
 Foi Ivan quem, usando sua rede de influências e seu controle absoluto sobre as sombras, conseguiu localizar Mirela. A irmã mais velha, agora uma Tremere envolta em segredos e magia antiga, estava mais distante do que nunca, mas finalmente ao alcance.<br>
-
 O Abraço de Ivan não foi apenas uma transformação, foi o início de um vínculo que mudaria para sempre o destino de Margot — e o caminho para o reencontro com Mirela.<br><br>
 
-
 Parte 4 – O reencontro e o reconhecimento<br>
-
 Meses depois, atravessando intrigas, sombras e segredos, Margot finalmente encontrou Mirela.<br>
-
 A irmã mais velha estava diferente — mais pálida, envolta em um silêncio ainda mais profundo, com o olhar marcado por experiências que Margot só podia imaginar. Mas quando seus olhos se encontraram, não houve distância, apenas reconhecimento. Mirela sorriu, pequeno e hesitante, como se não soubesse se merecia aquele momento. Margot, por sua vez, sentiu o peso da busca inteira cair dos ombros.<br>
-
-Elas não precisaram de muitas palavras. O abraço que trocaram falava mais do que qualquer explicação poderia conter. Mirela encostou a testa na da irmã e murmurou:<br>
-
+Elas não precisaram de muitas palavras. O abraço que trocaram falava mais do que qualquer explicação poderia conter. Mirela encostou a testa na da irmã e murmurou:<br><br>
 “Eu sabia que, se alguém pudesse me encontrar… seria você.”<br>
-
-Margot segurou suas mãos, firmes. “E eu nunca deixaria de procurar.”<br>
-
+Margot segurou suas mãos, firmes. “E eu nunca deixaria de procurar.”<br><br>
 Entre as duas havia cicatrizes, segredos e escolhas difíceis — mas também havia amor. Um vínculo que o tempo, a dor e até o Abraço não conseguiram apagar.<br>
+Naquela noite silenciosa, cercadas por velhos símbolos e novas sombras, Margot e Mirela não eram apenas vampiras de clãs diferentes, mas irmãs que voltavam a se encontrar.<br> Unidas, mesmo em mundos distintos. Ali, o reencontro não foi o fim da busca — foi o começo de algo novo.
+  </p>
+</div>
 
-Naquela noite silenciosa, cercadas por velhos símbolos e novas sombras, Margot e Mirela não eram apenas vampiras de clãs diferentes, mas irmãs que voltavam a se encontrar. Unidas, mesmo em mundos distintos. Ali, o reencontro não foi o fim da busca — foi o começo de algo novo.
-      </p>
-    </div>
 
-    <!-- SOMBRAS E ALIANÇAS -->
-    <div class="secao">
-      <h3>Entre Sombras e Laços</h3>
-      <p>
-        “Confio na minha irmã como confio em mim mesma.”<br><br>
-        “Ivan me mostrou o caminho, mas fui eu quem decidiu seguir.”<br><br>
-        “As sombras não são maldição. São ferramentas. São olhos. São escudos.”<br><br>
-        “Na escuridão, todos revelam quem realmente são.”
-      </p>
-    </div>
-
-    <!-- PALAVRAS DO MESTRE -->
-    <div class="secao">
-      <h3>Palavras do Mestre</h3>
-      <p>
-        Margot, tua chegada abalou peças silenciosas no tabuleiro da cidade.<br>
-        A Camarilla te observa com atenção, mas os Anarquistas te veem como ponte — ou ameaça.<br>
-        Em breve, uma figura do passado de Ivan te procurará...<br>
-        Esteja pronta para escolher entre preservar teus laços — ou romper com todos eles.
-      </p>
-    </div>
-
-    <!-- VOLTAR -->
-    <div class="botao-voltar">
-      <a href="margot.html">Voltar à Superfície</a>
+    <div class="voltar">
+      <a href="margot.html">← Voltar à Superfície</a>
     </div>
   </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Imagem ampliada">
+  </div>
+
+  <script>
+    function ampliarImagem(elemento) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      lightboxImg.src = elemento.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>

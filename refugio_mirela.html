@@ -3,167 +3,333 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Refúgio de Mirela Sangrimor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <title>Refúgio de Margot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
       background: url('img/fundo.png') no-repeat center center fixed;
       background-size: cover;
       color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 3rem 2rem;
     }
 
-    .refugio-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.75);
+    .refugio {
+      max-width: 1100px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
       padding: 2rem;
       border-radius: 12px;
-      border-left: 4px solid #8a2be2;
-      border-right: 4px solid #8a2be2;
-      box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
-    }
-
-    .refugio-container h2 {
-      font-family: 'Cinzel Decorative', serif;
-      color: #d0bdf4;
-      font-size: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .imagem-personagem {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .imagem-personagem img {
-      width: 250px;
-      border-radius: 8px;
       border: 2px solid #8a2be2;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
     }
 
-    .secao {
-      margin-bottom: 2.5rem;
-      background-color: rgba(255, 255, 255, 0.05);
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #d0bdf4;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .foto-principal {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .foto-principal img {
+      width: 100%;
+      border-radius: 10px;
+      border: 2px solid #8a2be2;
+    }
+
+    .textos {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .bloco {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
       border-left: 3px solid #8a2be2;
-      padding: 1.5rem;
       border-radius: 8px;
     }
 
-    .secao h3 {
+    .bloco h2 {
       font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
       color: #d0bdf4;
-      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .galeria {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .galeria img {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 2px solid #8a2be2;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.1);
+    }
+
+    .correio {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .mensagens,
+    .formulario {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .mensagens h2,
+    .formulario h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: #d0bdf4;
       margin-bottom: 1rem;
     }
 
-    .secao p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #e0e0e0;
+    .mensagens button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.6rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
     }
 
-    .botao-voltar {
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 0.8rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      color: #fff;
+      border-radius: 5px;
+    }
+
+    .formulario input[type="file"] {
+      border: none;
+    }
+
+    .formulario button {
+      background-color: #8a2be2;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .voltar {
       text-align: center;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
 
-    .botao-voltar a {
+    .voltar a {
       background-color: #8B0000;
       color: white;
-      padding: 0.7rem 1.2rem;
+      padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
       font-family: 'Cinzel Decorative', serif;
-      transition: background 0.3s;
     }
 
-    .botao-voltar a:hover {
+    .voltar a:hover {
       background-color: #a70000;
+    }
+
+    /* Lightbox */
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 3px solid #8a2be2;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      animation: zoomIn 0.3s ease-out;
+      cursor: zoom-out;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .topo, .correio {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .textos {
+        width: 100%;
+      }
+
+      .galeria {
+        flex-wrap: wrap;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="refugio-container">
-    <h2>Refúgio de Mirela Sangrimor</h2>
+  <div class="refugio">
+    <h1>Refúgio de Mirela</h1>
 
-    <!-- FOTO DA PERSONAGEM -->
-    <div class="imagem-personagem">
-      <img src="img/mirela2.jpeg" alt="Mirela Sangrimor">
+    <div class="topo">
+      <div class="foto-principal">
+        <img src="img/mirela1.jpeg" alt="Mirela">
+      </div>
+
+      <div class="textos">
+        <div class="bloco">
+          <h2>Fragmentos do Grimório</h2>
+          <p>“A cidade está viva. Seu subterrâneo pulsa com ecos antigos. Os rituais feitos no Museu mantêm o selo, mas algo escapa… algo observa.”<br><br>
+
+“Através do sal negro, da rosa seca e do sangue da lembrança, conjuro a proteção sobre meu santuário.”<br><br>
+
+“Barbacena não foi escolhida à toa. Os Tremere sabiam. A loucura do lugar não era apenas humana.”</p><br><br>
+        </div>
+        <div class="bloco">
+          <h2>Palavras do Mestre</h2>
+          <p>Mirela, os olhos que te vigiam não vêm apenas da Princesa ou dos Anarquistas.<br>
+Há algo nos sussurros do subsolo que ecoa tua linhagem.<br>
+Um antigo símbolo aparecerá em tua próxima visão. Não o ignore.<br>
+Sua interpretação pode salvar — ou condenar — teu círculo.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- HISTÓRIA COMPLETA -->
-    <div class="secao">
-      <h3>História da Personagem</h3>
-      <p>
-        Mirela Sangrimor <br> “Aquela que escreve feitiços com sangue”. Impecavelmente Tremere.<br>
+    <div class="galeria">
+      <img src="img/mirela1.jpeg" alt="Foto 1" onclick="ampliarImagem(this)">
+      <img src="img/mirela2.jpeg" alt="Foto 2" onclick="ampliarImagem(this)">
+      <img src="img/mirela.jpeg" alt="Foto 3" onclick="ampliarImagem(this)">
+    </div>
 
-<br>
+    <div class="correio">
+      <div class="mensagens">
+        <h2>Mensagens Recebidas</h2>
+        <button onclick="alert('De Samuel:\nOs olhos que te observam não são mortais.')">De: Samuel</button>
+        <button onclick="alert('De Ícaro:\nAlgo se move sob o campus da UFMG.')">De: Ícaro</button>
+        <button onclick="alert('De Elena:\nO espelho que deixei reflete mais que sua imagem.')">De: Elena</button>
+      </div>
+
+      <div class="formulario">
+        <h2>Correio da Noite</h2>
+        <form>
+          <input type="text" placeholder="Seu nome" required>
+          <input type="text" placeholder="Destinatário" required>
+          <textarea rows="4" placeholder="Mensagem..." required></textarea>
+          <input type="file">
+          <button type="submit">Enviar Bilhete</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="historia-completa">
+  <h2>História Completa</h2>
+  <p>
+    Mirela Sangrimor<br>
+“Aquela que escreve feitiços com sangue”.<br><br>
+
 Clã: Tremere<br>
 Afiliação: Casa Carna<br>
 Geração: 10ª<br>
 Local do Refúgio: Um sobrado antigo e discretamente reformado no bairro Santa Tereza, com um porão oculto convertido em laboratório ritualístico.<br>
+Conceito: A Escritora do Sangue<br><br>
+Mirela é uma ritualista nata, uma estudiosa das manifestações arcanas contidas no vitae vampírico. Desde o Abraço, ela desenvolve sua própria "linguagem de sangue", inscrevendo rituais únicos em pergaminhos e na própria pele.<br>
+Acredita que o sangue é a verdadeira linguagem da Criação — e que decifrá-lo é uma forma de libertação espiritual, especialmente para as mulheres da linhagem Tremere.<br><br>
 
-Conceito:
-A Escritora do Sangue<br>
-Mirela é uma ritualista nata, uma estudiosa das manifestações arcanas contidas no vitae vampírico. Desde o Abraço, ela desenvolve sua própria "linguagem de sangue", inscrevendo rituais únicos em pergaminhos e na própria pele.<br> Acredita que o sangue é a verdadeira linguagem da Criação — e que decifrá-lo é uma forma de libertação espiritual, especialmente para as mulheres da linhagem Tremere.<br><br>
-
-História:
 Nascida em Ouro Preto, Mirela cresceu entre livros, lendas e igrejas silenciosas. Descobriu desde cedo uma conexão com o oculto — via símbolos nas rachaduras da parede e escutava vozes durante as missas. Foi atraída por um culto secreto feminino nas matas próximas, onde aprendeu a ler o sangue como se fosse poesia. Seu Abraço veio de uma Tremere da Casa Carna, que viu nela uma "voz original" para os rituais.<br>
 Mas sua mentora desapareceu misteriosamente, e agora Mirela busca pistas nos subterrâneos de BH, acreditando que a cidade guarda ecos antigos — talvez ligados ao segredo que pulsa sob o Rio Arrudas. Entre a Camarilla e os Anarquistas, ela navega perigosamente, sendo útil demais para ser destruída… por enquanto.<br><br>
 
 Disciplinas:<br>
-•	Feitiçaria de Sangue (Ritualista Avançada)<br>
-•	Ofuscação (aprendida para se ocultar de olhos perigosos)<br>
-•	Dominação (em menor escala — apenas para conter mentes inquietas durante rituais)<br><br>
+• Feitiçaria de Sangue (Ritualista Avançada)<br>
+• Ofuscação (aprendida para se ocultar de olhos perigosos)<br>
+• Dominação (em menor escala — apenas para conter mentes inquietas durante rituais)<br><br>
 
 Vantagens e Defeitos sugeridos:<br>
-•	Vantagem: Biblioteca Oculta (pequena coleção de grimórios antigos e inacabados)<br>
-•	Vantagem: Ritual Exclusivo: Marcação de Sangue Espelhado (lê pensamentos impressos no sangue coagulado)<br>
-•	Defeito: Fama entre os Anarquistas como "bruxa perigosa"<br>
-•	Defeito: Débito com Ícaro Menezes — ele conhece um segredo sujo de seu Abraço<br><br>
+• Vantagem: Biblioteca Oculta (pequena coleção de grimórios antigos e inacabados)<br>
+• Vantagem: Ritual Exclusivo: Marcação de Sangue Espelhado (lê pensamentos impressos no sangue coagulado)<br>
+• Defeito: Fama entre os Anarquistas como "bruxa perigosa"<br>
+• Defeito: Débito com Ícaro Menezes — ele conhece um segredo sujo de seu Abraço<br><br>
 
 Personalidade:<br>
-•	Fala com calma e mistério, como quem conduz um ritual o tempo todo.<br>
-•	Encanta com palavras e gestos sutis.<br>
-•	Odeia autoridade cega, mas respeita estruturas se puder estudá-las e corrompê-las.<br>
-•	Tem um olhar de quem já viu coisas que não deveriam existir.<br><br>
+• Fala com calma e mistério, como quem conduz um ritual o tempo todo.<br>
+• Encanta com palavras e gestos sutis.<br>
+• Odeia autoridade cega, mas respeita estruturas se puder estudá-las e corrompê-las.<br>
+• Tem um olhar de quem já viu coisas que não deveriam existir.<br>
 
-      </p>
-    </div>
+  </p>
+</div>
 
-    <!-- RITUAIS E ANOTAÇÕES (Grimório) -->
-    <div class="secao">
-      <h3>Fragmentos do Grimório</h3>
-      <p>
-        “A cidade está viva. Seu subterrâneo pulsa com ecos antigos. Os rituais feitos no Museu mantêm o selo, mas algo escapa… algo observa.”<br><br>
-        “Através do sal negro, da rosa seca e do sangue da lembrança, conjuro a proteção sobre meu santuário.”<br><br>
-        “Barbacena não foi escolhida à toa. Os Tremere sabiam. A loucura do lugar não era apenas humana.”
-      </p>
-    </div>
 
-    <!-- PALAVRAS DO MESTRE -->
-    <div class="secao">
-      <h3>Palavras do Mestre</h3>
-      <p>
-        Mirela, os olhos que te vigiam não vêm apenas da Princesa ou dos Anarquistas. <br>
-        Há algo nos sussurros do subsolo que ecoa tua linhagem. <br>
-        Um antigo símbolo aparecerá em tua próxima visão. Não o ignore. <br>
-        Sua interpretação pode salvar — ou condenar — teu círculo. 
-      </p>
-    </div>
-
-    <!-- VOLTAR -->
-    <div class="botao-voltar">
-      <a href="mirela.html">Voltar à Superfície</a>
-
+    <div class="voltar">
+      <a href="mirela.html">← Voltar à Superfície</a>
     </div>
   </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Imagem ampliada">
+  </div>
+
+  <script>
+    function ampliarImagem(elemento) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      lightboxImg.src = elemento.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>
