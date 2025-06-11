@@ -587,3 +587,25 @@ nav ul li a:hover {
     display: none; /* não precisa de quebra manual no empilhamento vertical */
   }
 }
+.botao-voltar-galeria {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.botao-voltar-galeria a {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: transparent;
+  color: #bbb;
+  border: 1px solid #555;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.botao-voltar-galeria a:hover {
+  background-color: #222;
+  color: #fff;
+  border-color: #888;
+}
