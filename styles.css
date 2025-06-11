@@ -757,3 +757,10 @@ nav ul li a:hover {
   flex-direction: column;
   justify-content: center;
 }
+.titulo-jornal {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #8B0000; /* Ou outra cor dramática como #4B0082 */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
