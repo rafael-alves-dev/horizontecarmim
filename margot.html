@@ -61,24 +61,39 @@
       margin: 1rem 0;
     }
 
-    .botao-refugio {
-      margin-top: 2rem;
+    .botao-refugio,
+    .botao-voltar-galeria {
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+
+    .botao-refugio a,
+    .botao-voltar-galeria a {
+      background-color: transparent;
+      color: #ccc;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease-in-out;
     }
 
     .botao-refugio a {
       background-color: #4b0082;
       color: #fff;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Cinzel Decorative', serif;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: background-color 0.3s ease;
     }
 
     .botao-refugio a:hover {
       background-color: #5e2a94;
+    }
+
+    .botao-voltar-galeria a:hover {
+      background-color: #222;
+      color: #fff;
+      border-color: #999;
     }
 
     @media (max-width: 768px) {
@@ -89,6 +104,11 @@
 
       .personagem-imagem img {
         max-width: 100%;
+      }
+
+      .botao-refugio,
+      .botao-voltar-galeria {
+        text-align: center;
       }
     }
   </style>
@@ -115,22 +135,19 @@
       </div>
 
       <div class="personagem-infos">
-              <h2>Margot</h2>
+        <h2>Margot</h2>
         <p>
-        
-Clã: Lasombra<br>
-Alinhamento: Camarilla<br>
-Vínculos: Irmã de Mirela Sangrimor<br><br>
-
-Margot é uma Lasombra recente, movida pela busca incansável por sua irmã desaparecida. Seu Abraço foi motivado por amor, dor e obsessão por respostas. Embora sua presença seja carismática e misteriosa, pouco se sabe sobre suas verdadeiras intenções. O que é certo: Margot não veio a Belo Horizonte por acaso. Ela está aqui por alguém — ou por algo — que ainda permanece nas sombras.
+          Clã: Lasombra<br>
+          Alinhamento: Camarilla<br>
+          Vínculos: Irmã de Mirela Sangrimor<br><br>
+          Margot é uma Lasombra recente, movida pela busca incansável por sua irmã desaparecida. Seu Abraço foi motivado por amor, dor e obsessão por respostas. Embora sua presença seja carismática e misteriosa, pouco se sabe sobre suas verdadeiras intenções. O que é certo: Margot não veio a Belo Horizonte por acaso. Ela está aqui por alguém — ou por algo — que ainda permanece nas sombras.
         </p>
         <div class="botao-refugio">
           <a href="login_margot.html">Refúgio</a>
         </div>
         <div class="botao-voltar-galeria">
-  <a href="personagens.html">← Voltar para a Galeria de Personagens</a>
-</div>
-
+          <a href="personagens.html">← Voltar</a>
+        </div>
       </div>
     </section>
   </main>
