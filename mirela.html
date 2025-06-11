@@ -56,24 +56,39 @@
       margin: 1rem 0;
     }
 
-    .botao-refugio {
-      margin-top: 2rem;
+    .botao-refugio,
+    .botao-voltar-galeria {
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+
+    .botao-refugio a,
+    .botao-voltar-galeria a {
+      background-color: transparent;
+      color: #ccc;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #555;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s ease-in-out;
     }
 
     .botao-refugio a {
       background-color: #8B0000;
       color: #fff;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      font-family: 'Cinzel Decorative', serif;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: background-color 0.3s ease;
     }
 
     .botao-refugio a:hover {
       background-color: #a80000;
+    }
+
+    .botao-voltar-galeria a:hover {
+      background-color: #222;
+      color: #fff;
+      border-color: #999;
     }
 
     @media (max-width: 768px) {
@@ -84,6 +99,11 @@
 
       .personagem-imagem img {
         max-width: 100%;
+      }
+
+      .botao-refugio,
+      .botao-voltar-galeria {
+        text-align: center;
       }
     }
   </style>
@@ -112,26 +132,27 @@
       </div>
 
       <div class="personagem-infos">
-        
         <h2>Mirela Sangrimor</h2>
-
         <p>
-          
-<br>
-Conceito: A Escritora do Sangue
-Mirela é uma ritualista Tremere da Casa Carna, fascinada por inscrever feitiços com vitae. Desenvolveu sua própria linguagem de sangue, acreditando que o sangue é a linguagem divina da Criação, e que decifrá-lo liberta a essência espiritual — sobretudo das mulheres de seu clã.
-
-Origem:
-Nascida em Ouro Preto, teve desde a infância visões ocultas e experiências sobrenaturais em igrejas e matas antigas. Iniciada em um culto secreto feminino, aprendeu a "ler o sangue como poesia". Foi abraçada por uma Tremere da Casa Carna, que desapareceu pouco depois.
+          <br>
+          <strong>Conceito:</strong> A Escritora do Sangue<br>
+          Mirela é uma ritualista Tremere da Casa Carna, fascinada por inscrever feitiços com vitae. Desenvolveu sua própria linguagem de sangue, acreditando que o sangue é a linguagem divina da Criação, e que decifrá-lo liberta a essência espiritual — sobretudo das mulheres de seu clã.
         </p>
-
+        <p>
+          <strong>Origem:</strong><br>
+          Nascida em Ouro Preto, teve desde a infância visões ocultas e experiências sobrenaturais em igrejas e matas antigas. Iniciada em um culto secreto feminino, aprendeu a "ler o sangue como poesia". Foi abraçada por uma Tremere da Casa Carna, que desapareceu pouco depois.
+        </p>
         <p><strong>Geração:</strong> 13ª</p>
         <p><strong>Abraço:</strong> Ouro Preto, 1960</p>
-       
 
         <div class="botao-refugio">
           <a href="login_mirela.html">Refúgio</a>
         </div>
+
+        <div class="botao-voltar-galeria">
+          <a href="personagens.html">← Voltar</a>
+        </div>
+
       </div>
     </section>
   </main>

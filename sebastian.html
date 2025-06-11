@@ -56,24 +56,44 @@
       margin: 1rem 0;
     }
 
-    .botao-refugio {
-      margin-top: 2rem;
+    .botao-refugio,
+    .botao-voltar-galeria {
+      margin-top: 1.2rem;
+      text-align: left;
     }
 
-    .botao-refugio a {
-      background-color: #4169e1;
-      color: #fff;
+    .botao-refugio a,
+    .botao-voltar-galeria a {
       padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       font-family: 'Cinzel Decorative', serif;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    .botao-refugio a {
+      background-color: #4169e1;
+      color: #fff;
     }
 
     .botao-refugio a:hover {
       background-color: #1e3d9f;
+    }
+
+    .botao-voltar-galeria a {
+      background-color: transparent;
+      color: #ccc;
+      border: 1px solid #555;
+      font-size: 0.85rem;
+      padding: 0.6rem 1.2rem;
+    }
+
+    .botao-voltar-galeria a:hover {
+      background-color: #222;
+      color: #fff;
+      border-color: #999;
     }
 
     @media (max-width: 768px) {
@@ -84,6 +104,11 @@
 
       .personagem-imagem img {
         max-width: 100%;
+      }
+
+      .botao-refugio,
+      .botao-voltar-galeria {
+        text-align: center;
       }
     }
   </style>
@@ -112,8 +137,6 @@
       </div>
 
       <div class="personagem-infos">
-        
-
         <h2>Sebastian</h2>
 
         <p>
@@ -124,11 +147,14 @@
 
         <p><strong>Geração:</strong> 13ª</p>
         <p><strong>Abraço:</strong> Belo Horizonte, década de 1920</p>
-       
         <p><strong>Especialidade:</strong> Política, influência social e diplomacia entre feudos</p>
 
         <div class="botao-refugio">
           <a href="login_sebastian.html">Refúgio</a>
+        </div>
+
+        <div class="botao-voltar-galeria">
+          <a href="personagens.html">← Voltar</a>
         </div>
       </div>
     </section>

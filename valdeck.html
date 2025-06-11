@@ -67,24 +67,44 @@
       filter: invert(100%);
     }
 
-    .botao-refugio {
-      margin-top: 2rem;
+    .botao-refugio,
+    .botao-voltar-galeria {
+      margin-top: 1.2rem;
+      text-align: left;
     }
 
-    .botao-refugio a {
-      background-color: #6a0dad;
-      color: #fff;
+    .botao-refugio a,
+    .botao-voltar-galeria a {
       padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
       font-family: 'Cinzel Decorative', serif;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
+    }
+
+    .botao-refugio a {
+      background-color: #6a0dad;
+      color: #fff;
     }
 
     .botao-refugio a:hover {
       background-color: #4b0082;
+    }
+
+    .botao-voltar-galeria a {
+      background-color: transparent;
+      color: #ccc;
+      border: 1px solid #555;
+      font-size: 0.85rem;
+      padding: 0.6rem 1.2rem;
+    }
+
+    .botao-voltar-galeria a:hover {
+      background-color: #222;
+      color: #fff;
+      border-color: #999;
     }
 
     @media (max-width: 768px) {
@@ -95,6 +115,11 @@
 
       .personagem-imagem img {
         max-width: 100%;
+      }
+
+      .botao-refugio,
+      .botao-voltar-galeria {
+        text-align: center;
       }
     }
   </style>
@@ -123,8 +148,6 @@
       </div>
 
       <div class="personagem-infos">
-        
-
         <h2>Valdeck</h2>
 
         <p>
@@ -135,11 +158,14 @@
 
         <p><strong>Geração:</strong> 13ª</p>
         <p><strong>Alinhamento:</strong> Independente</p>
-        
         <p><strong>Especialidade:</strong> Conexão espiritual, rastreamento sobrenatural e resistência primal</p>
 
         <div class="botao-refugio">
           <a href="login_valdeck.html">Refúgio</a>
+        </div>
+
+        <div class="botao-voltar-galeria">
+          <a href="personagens.html">← Voltar</a>
         </div>
       </div>
     </section>
