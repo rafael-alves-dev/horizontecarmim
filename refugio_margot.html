@@ -92,19 +92,20 @@
     }
 
     .correio {
-      margin-top: 2.5rem;
       display: flex;
       flex-wrap: wrap;
+      justify-content: space-between;
       gap: 2rem;
+      margin-top: 2.5rem;
     }
 
     .mensagens,
-.formulario {
-  flex: 1;
-  width: 100%;
-  box-sizing: border-box;
-}
-
+    .formulario {
+      flex: 1;
+      min-width: 300px;
+      max-width: 48%;
+      box-sizing: border-box;
+    }
 
     .mensagens h2,
     .formulario h2 {
@@ -169,7 +170,6 @@
       background-color: #a70000;
     }
 
-    /* Lightbox */
     #lightbox {
       position: fixed;
       top: 0;
@@ -198,38 +198,59 @@
       to { transform: scale(1); opacity: 1; }
     }
 
+    /* ========== RESPONSIVO MOBILE ========== */
     @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
-    padding: 1rem;
-  }
+      body {
+        overflow-x: hidden;
+      }
 
-  .correio {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
-  }
+      .topo {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
 
-  .mensagens,
-  .formulario {
-    width: 100%;
-    padding: 0;
-  }
+      .foto-principal {
+        max-width: 180px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
 
-  .formulario input,
-  .formulario textarea,
-  .formulario button,
-  .mensagens button {
-    width: 100%;
-    font-size: 1rem;
-  }
+      .textos {
+        width: 100%;
+        padding: 0 1rem;
+      }
 
-  .formulario input[type="file"] {
-    font-size: 0.9rem;
-  }
-}
+      .correio {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
 
+      .mensagens,
+      .formulario {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
 
+      .mensagens button,
+      .formulario input,
+      .formulario textarea,
+      .formulario button {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      .formulario input[type="file"] {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+      }
+
+      .galeria {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -245,19 +266,16 @@
         <div class="bloco">
           <h2>Entre Sombras e Laços</h2>
           <p>“Confio na minha irmã como confio em mim mesma.”<br><br>
-
-“Ivan me mostrou o caminho, mas fui eu quem decidiu seguir.”<br><br>
-
-“As sombras não são maldição. São ferramentas. São olhos. São escudos.”<br><br>
-
-“Na escuridão, todos revelam quem realmente são.”</p>
+          “Ivan me mostrou o caminho, mas fui eu quem decidiu seguir.”<br><br>
+          “As sombras não são maldição. São ferramentas. São olhos. São escudos.”<br><br>
+          “Na escuridão, todos revelam quem realmente são.”</p>
         </div>
         <div class="bloco">
           <h2>Palavras do Mestre</h2>
           <p>Margot, tua chegada abalou peças silenciosas no tabuleiro da cidade. <br>
-A Camarilla te observa com atenção, mas os Anarquistas te veem como ponte — ou ameaça.<br>
-Em breve, uma figura do passado de Ivan te procurará...<br>
-Esteja pronta para escolher entre preservar teus laços — ou romper com todos eles.</p>
+          A Camarilla te observa com atenção, mas os Anarquistas te veem como ponte — ou ameaça.<br>
+          Em breve, uma figura do passado de Ivan te procurará...<br>
+          Esteja pronta para escolher entre preservar teus laços — ou romper com todos eles.</p>
         </div>
       </div>
     </div>
@@ -271,66 +289,62 @@ Esteja pronta para escolher entre preservar teus laços — ou romper com todos 
     <div class="correio">
       <div class="mensagens">
         <h2>Mensagens Recebidas</h2>
-        <button onclick="alert('De Samuel:\nOs olhos que te observam não são mortais.')">De: Samuel</button>
-        <button onclick="alert('De Ícaro:\nAlgo se move sob o campus da UFMG.')">De: Ícaro</button>
-        <button onclick="alert('De Elena:\nO espelho que deixei reflete mais que sua imagem.')">De: Elena</button>
+        <button onclick="window.location.href='carta_ivan.html'">De: Ivan</button>
+        <button onclick="window.location.href='carta_icaro.html'">De: Ícaro</button>
+        <button onclick="window.location.href='carta_elena.html'">De: Elena</button>
       </div>
 
       <div class="formulario">
         <h2>Correio da Noite</h2>
         <form action="https://formsubmit.co/rafaelalves013@gmail.com" method="POST" enctype="multipart/form-data">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_next" value="https://rafael-alves-dev.github.io/horizontecarmim/obrigadov5.html">
-
-  
-  <input type="text" name="nome" placeholder="Seu nome" required>
-  <input type="text" name="destinatario" placeholder="Destinatário" required>
-  <textarea name="mensagem" rows="4" placeholder="Mensagem..." required></textarea>
-  <input type="file" name="anexo">
-  
-  <button type="submit">Enviar Bilhete</button>
-</form>
-
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://rafael-alves-dev.github.io/horizontecarmim/obrigadov5.html">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="text" name="destinatario" placeholder="Destinatário" required>
+          <textarea name="mensagem" rows="4" placeholder="Mensagem..." required></textarea>
+          <input type="file" name="anexo">
+          <button type="submit">Enviar Bilhete</button>
+        </form>
       </div>
     </div>
 
-    <div class="historia-completa">
-  <h2>História Completa</h2>
-  <p>
-    Parte 1 – A ligação entre as irmãs<br>
+    <br>
+<div class="bloco">
+          <h2>História</h2>
+          <p>Parte 1 – A ligação entre as irmãs <br><br>
 Mirela sempre foi a filha estranha da família. A irmã mais velha, silenciosa, de uma inteligência inquietante, com um olhar que parecia enxergar além do que os outros podiam perceber. Desde pequena, ela murmurava palavras em línguas desconhecidas, falava de coisas que pareciam impossíveis para uma criança. Passava horas lendo livros sem título, escondidos sob o assoalho do quarto, e passava noites desenhando símbolos estranhos na janela embaçada.<br>
 Margot, a irmã mais nova, era seu oposto: vibrante, direta e cheia de vida. Ela nunca entendeu o mundo estranho de Mirela, mas a amava com toda sua força. Quando os outros zombavam ou ignoravam Mirela, Margot a defendia sem hesitar. E quando Mirela desaparecia por horas, era Margot quem ficava acordada, esperando silenciosamente que a irmã voltasse. Essa ligação, forte e silenciosa, parecia inquebrável.<br><br>
 
-Parte 2 – O desaparecimento<br>
+Parte 2 – O desaparecimento<br><br>
 Mas então, Mirela desapareceu.<br>
 Não houve aviso, nem carta, nem despedida. A família tentou seguir em frente, fingindo que era uma fuga voluntária, um momento ruim que ela precisava para si. Mas Margot não acreditou em nenhuma dessas versões. Sentia, em seu âmago, que algo mais sombrio e profundo havia acontecido. Uma sensação quase doente de que Mirela ainda estava viva, mas perdida em um mundo do qual não podia sair sozinha.<br>
 Movida pela dor e pela obsessão, Margot vasculhou o quarto da irmã, encontrou cadernos com anotações cifradas, símbolos que a levavam para círculos ocultos, fóruns secretos e histórias sussurradas sobre seitas antigas e sociedades misteriosas. Ela sabia que não era apenas uma fuga — era uma jornada para um outro mundo, um mundo que a irmã tinha atravessado.<br><br>
 
-Parte 3 – A descoberta e o abraço do Lasombra<br>
+Parte 3 – A descoberta e o abraço do Lasombra<br><br>
 Enquanto Margot mergulhava cada vez mais fundo na busca pela irmã desaparecida, o mundo oculto dos vampiros começou a se revelar. Ela não tinha preferência por clãs — seu único desejo era encontrar Mirela e entender a verdade por trás do desaparecimento.<br>
 Em meio a suas pesquisas, Margot conheceu Ivan, um Lasombra misterioso e poderoso, senhor das sombras e mestre da manipulação. Ivan não era o tipo de vampiro que Margot esperava, mas sua presença era magnética e sua aura carregava uma força que ela não conseguia ignorar.<br>
-Conforme o tempo passou, Margot e Ivan se aproximaram. Entre as sombras e os segredos, nasceu uma conexão profunda e inesperada — um amor que foi crescendo na escuridão. Quando Ivan lhe ofereceu o Abraço, Margot não hesitou. Aceitou se tornar uma Lasombra não só para obter o poder que precisava para enfrentar aquele mundo sombrio, mas porque confiava e amava Ivan.<br>
+Conforme o tempo passou, Margot e Ivan se aproximaram. Entre as sombras e os segredos, nasceu uma conexão profunda e inesperada — um amor que foi crescendo na escuridão. Quando Ivan lhe ofereceu o Abraço, Margot não hesitou. Aceitou se tornar uma Lasombra não só para obter o poder que precisava para enfrentar aquele mundo sombrio, mas porque confiava e amava Ivan.
 Foi Ivan quem, usando sua rede de influências e seu controle absoluto sobre as sombras, conseguiu localizar Mirela. A irmã mais velha, agora uma Tremere envolta em segredos e magia antiga, estava mais distante do que nunca, mas finalmente ao alcance.<br>
 O Abraço de Ivan não foi apenas uma transformação, foi o início de um vínculo que mudaria para sempre o destino de Margot — e o caminho para o reencontro com Mirela.<br><br>
 
-Parte 4 – O reencontro e o reconhecimento<br>
+Parte 4 – O reencontro e o reconhecimento<br><br>
 Meses depois, atravessando intrigas, sombras e segredos, Margot finalmente encontrou Mirela.<br>
 A irmã mais velha estava diferente — mais pálida, envolta em um silêncio ainda mais profundo, com o olhar marcado por experiências que Margot só podia imaginar. Mas quando seus olhos se encontraram, não houve distância, apenas reconhecimento. Mirela sorriu, pequeno e hesitante, como se não soubesse se merecia aquele momento. Margot, por sua vez, sentiu o peso da busca inteira cair dos ombros.<br>
 Elas não precisaram de muitas palavras. O abraço que trocaram falava mais do que qualquer explicação poderia conter. Mirela encostou a testa na da irmã e murmurou:<br><br>
+
 “Eu sabia que, se alguém pudesse me encontrar… seria você.”<br>
 Margot segurou suas mãos, firmes. “E eu nunca deixaria de procurar.”<br><br>
-Entre as duas havia cicatrizes, segredos e escolhas difíceis — mas também havia amor. Um vínculo que o tempo, a dor e até o Abraço não conseguiram apagar.<br>
-Naquela noite silenciosa, cercadas por velhos símbolos e novas sombras, Margot e Mirela não eram apenas vampiras de clãs diferentes, mas irmãs que voltavam a se encontrar.<br> Unidas, mesmo em mundos distintos. Ali, o reencontro não foi o fim da busca — foi o começo de algo novo.
-  </p>
-</div>
 
+Entre as duas havia cicatrizes, segredos e escolhas difíceis — mas também havia amor. Um vínculo que o tempo, a dor e até o Abraço não conseguiram apagar.<br>
+Naquela noite silenciosa, cercadas por velhos símbolos e novas sombras, Margot e Mirela não eram apenas vampiras de clãs diferentes, mas irmãs que voltavam a se encontrar.<br>
+Unidas, mesmo em mundos distintos. Ali, o reencontro não foi o fim da busca — foi o começo de algo novo.</p>
+        </div>
 
     <div class="voltar">
       <a href="margot.html">← Voltar à Superfície</a>
     </div>
   </div>
 
-  <!-- Lightbox -->
   <div id="lightbox" onclick="closeLightbox()">
     <img src="" alt="Imagem ampliada">
   </div>

@@ -966,13 +966,15 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   .correio {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
   }
 
   .mensagens,
   .formulario {
     width: 100%;
   }
+}
+
 
   .formulario input,
   .formulario textarea {
@@ -991,5 +993,5 @@ nav ul li a:hover {
   .mensagens button {
     font-size: 1rem;
   }
-}
+
 
