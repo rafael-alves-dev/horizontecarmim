@@ -962,3 +962,34 @@ nav ul li a:hover {
   line-height: 1.6;
   color: #e0e0e0;
 }
+/*responsivo do form*/
+@media (max-width: 768px) {
+  .correio {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mensagens,
+  .formulario {
+    width: 100%;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    font-size: 1rem;
+  }
+
+  .formulario input[type="file"] {
+    font-size: 0.9rem;
+  }
+
+  .formulario button {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .mensagens button {
+    font-size: 1rem;
+  }
+}
+
