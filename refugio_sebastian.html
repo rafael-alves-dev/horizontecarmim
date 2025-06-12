@@ -4,143 +4,387 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Refúgio de Sebastian</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
       background: url('img/fundo.png') no-repeat center center fixed;
       background-size: cover;
       color: #f0f0f0;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 3rem 2rem;
     }
 
-    .refugio-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(0, 0, 0, 0.8);
+* {
+  box-sizing: border-box;
+}
+
+    .refugio {
+      max-width: 1100px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
       padding: 2rem;
       border-radius: 12px;
-      border-left: 4px solid #4169e1;
-      border-right: 4px solid #4169e1;
-      box-shadow: 0 0 20px rgba(65, 105, 225, 0.4);
+      border: 2px solid #8a2be2;
     }
 
-    .refugio-container h2 {
+    h1 {
       font-family: 'Cinzel Decorative', serif;
-      color: #b0c4de;
-      font-size: 2rem;
+      color: #d0bdf4;
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .imagem-personagem {
-      text-align: center;
-      margin-bottom: 2rem;
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
 
-    .imagem-personagem img {
-      width: 250px;
-      border-radius: 8px;
-      border: 2px solid #4169e1;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    .foto-principal {
+      flex: 1;
+      max-width: 300px;
     }
 
-    .secao {
-      margin-bottom: 2.5rem;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-left: 3px solid #4169e1;
-      padding: 1.5rem;
-      border-radius: 8px;
+    .foto-principal img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #ff003c;
+  box-shadow: 0 0 12px #ff003c;
+}
+
+    
+
+    .textos {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
-    .secao h3 {
+    .bloco {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #ff003c;
+  box-shadow: 0 0 10px #ff003c;
+}
+
+
+    .bloco h2 {
       font-family: 'Cinzel Decorative', serif;
-      color: #b0c4de;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      color: #d0bdf4;
+      margin-bottom: 0.5rem;
+    }
+
+    .galeria {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .galeria img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #ff003c;
+  box-shadow: 0 0 8px #ff003c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+    .galeria img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #ff003c, 0 0 20px #ff003c inset;
+}
+
+    .correio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .mensagens,
+    .formulario {
+      flex: 1;
+      min-width: 300px;
+      max-width: 48%;
+      box-sizing: border-box;
+    }
+
+    .mensagens h2,
+    .formulario h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: #d0bdf4;
       margin-bottom: 1rem;
     }
 
-    .secao p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #e0e0e0;
+    .mensagens button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.6rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
     }
 
-    .botao-voltar {
-      text-align: center;
-      margin-top: 2rem;
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 0.8rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      color: #fff;
+      border-radius: 5px;
     }
 
-    .botao-voltar a {
-      background-color: #4169e1;
+    .formulario input[type="file"] {
+      border: none;
+    }
+
+    .formulario button {
+      background-color: #8a2be2;
       color: white;
-      padding: 0.7rem 1.2rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
       font-family: 'Cinzel Decorative', serif;
-      transition: background 0.3s;
     }
 
-    .botao-voltar a:hover {
-      background-color: #1e3d9f;
+    .voltar a:hover {
+      background-color: #a70000;
     }
+
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 3px solid #8a2be2;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      animation: zoomIn 0.3s ease-out;
+      cursor: zoom-out;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ========== RESPONSIVO MOBILE ========== */
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .formulario {
+  overflow-x: hidden;
+}
+
+
+      .topo {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .foto-principal {
+        max-width: 180px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .textos {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .correio {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
+
+      .mensagens,
+      .formulario {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .mensagens button,
+      .formulario input,
+      .formulario textarea,
+      .formulario button {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      .formulario input[type="file"] {
+  display: block;
+  max-width: 100%;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #8a2be2;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+
+      .galeria {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    .formulario {
+  overflow-x: hidden;
+}
+
+.formulario input[type="file"] {
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
   </style>
 </head>
-
 <body>
-  <div class="refugio-container">
-    <h2>Refúgio de Sebastian</h2>
+  <div class="refugio">
+    <h1>Refúgio de Sebastian</h1>
 
-    <!-- FOTO DO PERSONAGEM -->
-    <div class="imagem-personagem">
-      <img src="img/sebastian.jpeg" alt="Sebastian Ventrue" />
+    <div class="topo">
+      <div class="foto-principal">
+        <img src="img/sebastian.jpeg" alt="Sebastian">
+      </div>
+
+      <div class="textos">
+        <div class="bloco">
+          <h2>Registros Pessoais</h2>
+          <p>“A Camarilla é feita de silêncio e ameaças veladas. Quem grita, perde. Quem escuta, comanda.”<br><br>
+          “A proposta de reinstaurar o Conselho dos Primogênitos é ousada. Mas ousadia é para aqueles que não temem o fogo da responsabilidade.”<br><br>
+          “Eleonora acredita que pode me ultrapassar. Apressar-se é erro de iniciantes.”<br><br>
+          </p>
+        </div>
+        <div class="bloco">
+          <h2>Palavras do Mestre</h2>
+          <p>Sebastian, o tabuleiro está montado — mas algumas peças têm vontades próprias.<br> 
+            A Condessa Beatriz te deu a máscara e o trono, mas algo do passado dela ecoa pelas noites recentes.<br> 
+            Um nome antigo será sussurrado por um Tremere em breve... <br>
+            Quando isso acontecer, não demonstre surpresa. Demonstre domínio.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- HISTÓRIA COMPLETA -->
-    <div class="secao">
-      <h3>História da Personagem</h3>
-      <p>
-        Ao ler esta carta vinda da Camarilla, mais precisamente de Doralice, lembro-me de quando ainda era apenas um jovem, cerca de vinte anos. Ainda consigo lembrar daquela noite, enquanto eu caminhava pelas vielas da cidade voltando daquele teatro que mais parecia uma casa de horror. <br> 
-        A chuva cai fortemente sobre as ruas, tornando-as mais escuras, frias e sombrias. Quando me aproximava da rua principal, uma charrete encostou, escura, com detalhes em ouro, sua janela tinha uma linda cortina vermelha estilo gótico, o cocheiro com roupas impecáveis, tudo era perfeito para o local que eu estava.<br>
-         Ao parar em minha frente, a cortina levemente se abriu e ouvi uma voz suave ecoando em meus ouvidos. - Olá, Sebastian, vejo que precisa de uma carona até sua residência.<br> 
-         Como ela sabia meu nome? Talvez eu estivesse delirando, talvez não.<br> 
-         Ao abrir totalmente a janela, uma dama com olhos vermelhos e cabelos longos segurava em sua mão uma taça, e seus olhos me deixavam paralisado com sua beleza. Dessa vez, não tive escolha; sem mesmo saber como entrei naquela charrete.<br> 
-         Pouco tempo depois, sentia minha cabeça rodando, meu corpo se desfalecendo, um líquido meloso descia sobre meu pescoço até eu ficar totalmente desacordado.<br> 
-         E foi assim que conheci Beatriz, uma condesa Ventrue, minha senhora, que me deu o dom da vida eterna, ou, se posso dizer, a maldição dela.<br> 
-         Há pouco mais de cem anos, passei a morar nessa cidade chamada Belo Horizonte, conhecida pelas suas belezas e pela sua farta mesa de sangue.<br> 
-         Apesar de eu, Sebastian, assim como minha senhora, bebemos apenas um tipo de sangue. Mas assim como todo Ventrue, também carrego comigo os traços e as regras narradas pela nossa história.<br> 
-         Assim aprendi que, quando a Camarilla chama, devemos ir sem questionar e fazer com que sejam cumpridas suas ordens.
-      </p>
+    <div class="galeria">
+      <img src="img/" alt="Foto 1" onclick="ampliarImagem(this)">
+      <img src="img/" alt="Foto 2" onclick="ampliarImagem(this)">
+      <img src="img/" alt="Foto 3" onclick="ampliarImagem(this)">
     </div>
 
-    <!-- FRAGMENTOS DO GRIMÓRIO / REGISTROS PRIVADOS -->
-    <div class="secao">
-      <h3>Registros Pessoais</h3>
-      <p>
-        “A Camarilla é feita de silêncio e ameaças veladas. Quem grita, perde. Quem escuta, comanda.”<br><br>
-        “A proposta de reinstaurar o Conselho dos Primogênitos é ousada. Mas ousadia é para aqueles que não temem o fogo da responsabilidade.”<br><br>
-        “Eleonora acredita que pode me ultrapassar. Apressar-se é erro de iniciantes.”
-      </p>
+    <div class="correio">
+      <div class="mensagens">
+        <h2>Mensagens Recebidas</h2>
+        <button onclick="window.location.href='carta_arnaldo.html'">Convide de Arnaldo Esteves</button>
+        <button onclick="window.location.href='carta_icaro.html'">vazio</button>
+        <button onclick="window.location.href='carta_elena.html'">vazio</button>
+      </div>
+
+      <div class="formulario">
+        <h2>Correio da Noite</h2>
+        <form action="https://formsubmit.co/rafaelalves013@gmail.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://rafael-alves-dev.github.io/horizontecarmim/obrigadov5.html">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="text" name="destinatario" placeholder="Destinatário" required>
+          <textarea name="mensagem" rows="4" placeholder="Mensagem..." required></textarea>
+          <input type="file" name="anexo">
+          <button type="submit">Enviar Carta</button>
+        </form>
+      </div>
     </div>
 
-    <!-- PALAVRAS DO MESTRE -->
-    <div class="secao">
-      <h3>Palavras do Mestre</h3>
-      <p>
-        Sebastian, o tabuleiro está montado — mas algumas peças têm vontades próprias.  
-        A Condessa Beatriz te deu a máscara e o trono, mas algo do passado dela ecoa pelas noites recentes.  
-        Um nome antigo será sussurrado por um Tremere em breve.  
-        Quando isso acontecer, não demonstre surpresa.  
-        Demonstre domínio.
-      </p>
-    </div>
+    <br>
+<div class="bloco">
+          <h2>História</h2>
+          <p>Ao ler esta carta vinda da Camarilla, mais precisamente de Doralice, lembro-me de quando ainda era apenas um jovem, cerca de vinte anos. Ainda consigo lembrar daquela noite, enquanto eu caminhava pelas vielas da cidade voltando daquele teatro que mais parecia uma casa de horror.<br>
+A chuva cai fortemente sobre as ruas, tornando-as mais escuras, frias e sombrias. Quando me aproximava da rua principal, uma charrete encostou, escura, com detalhes em ouro, sua janela tinha uma linda cortina vermelha estilo gótico, o cocheiro com roupas impecáveis, tudo era perfeito para o local que eu estava.<br>
+Ao parar em minha frente, a cortina levemente se abriu e ouvi uma voz suave ecoando em meus ouvidos. - Olá, Sebastian, vejo que precisa de uma carona até sua residência.<br>
+Como ela sabia meu nome? Talvez eu estivesse delirando, talvez não.<br>
+Ao abrir totalmente a janela, uma dama com olhos vermelhos e cabelos longos segurava em sua mão uma taça, e seus olhos me deixavam paralisado com sua beleza. Dessa vez, não tive escolha; sem mesmo saber como entrei naquela charrete.<br>
+Pouco tempo depois, sentia minha cabeça rodando, meu corpo se desfalecendo, um líquido meloso descia sobre meu pescoço até eu ficar totalmente desacordado.<br>
+E foi assim que conheci Beatriz, uma condesa Ventrue, minha senhora, que me deu o dom da vida eterna, ou, se posso dizer, a maldição dela.<br>
+Há pouco mais de cem anos, passei a morar nessa cidade chamada Belo Horizonte, conhecida pelas suas belezas e pela sua farta mesa de sangue.<br>
+Apesar de eu, Sebastian, assim como minha senhora, bebemos apenas um tipo de sangue. Mas assim como todo Ventrue, também carrego comigo os traços e as regras narradas pela nossa história.<br>
+Assim aprendi que, quando a Camarilla chama, devemos ir sem questionar e fazer com que sejam cumpridas suas ordens..</p>
+        </div>
 
-    <!-- VOLTAR PARA A SUPERFÍCIE -->
-    <div class="botao-voltar">
-      <a href="sebastian.html">Voltar à Superfície</a>
+    <div class="voltar">
+      <a href="sebastian.html">← Voltar à Superfície</a>
     </div>
   </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Imagem ampliada">
+  </div>
+
+  <script>
+    function ampliarImagem(elemento) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      lightboxImg.src = elemento.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
 </body>
 </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta de Ivan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('img/fundo_carta_desk.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    .mensagem-container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #8a2be2;
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #d0bdf4;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .mensagem-conteudo {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .foto-remetente {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background-color: #000;
+      border-radius: 8px;
+      border: 2px solid #8a2be2;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+    }
+
+    .mensagem-texto {
+      background-color: rgba(255,255,255,0.05);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      border-left: 4px solid #8a2be2;
+      line-height: 1.6;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    .mensagem-texto p {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .voltar a:hover {
+      background-color: #a70000;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      body {
+        background: url('img/fundo_carta_mobile.png') no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      .mensagem-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mensagem-texto {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mensagem-container">
+    <h1>Convite de Arnaldo</h1>
+    <div class="mensagem-conteudo">
+      <img src="img/arnaldo.png" alt="Arnaldo" class="foto-remetente">
+      <div class="mensagem-texto">
+        <p>
+          <strong>Para o estimado Sebastian,<br>
+Cavaleiro das Tradições,<br>
+Filho da Dama Velada, a Condessa Beatriz.</strong><br><br>
+
+Que esta missiva o encontre envolto no conforto do silêncio e no vigor imortal da noite.<br><br>
+
+Permita-me, antes de tudo, lamentar que nossas interações tenham sido, até aqui, distantes — embora nunca indiferentes. Tive ciência de seus movimentos, de sua firmeza na condução dos assuntos da Torre, e devo admitir que há algo de tranquilizador em saber que ainda há quem mantenha o sangue azul tão limpo do barro moderno.<br><br>
+
+É justamente por isso que me dirijo a vós.<br><br>
+
+No crepúsculo das últimas décadas, ventos estranhos sopraram sobre nossa cidade. Anciãos partiram, sombras novas se alongaram, e as estruturas que nos sustentavam foram, em partes, corroídas por silêncios oportunistas. Em meio a isso, <strong>nós, os herdeiros legítimos da ordem</strong>, devemos reconsiderar nossa posição.<br><br>
+
+Por isso, será realizada uma reunião privativa em <strong>Nova Lima</strong>, na noite do próximo <strong>sábado</strong>, sob a hospitalidade de uma de nossas aliadas de linhagem respeitável. Será uma ocasião de bom gosto, com segurança garantida e seletíssimo acesso. <em>Nenhum título será exigido. Nenhuma aliança será imposta. Apenas conversas... entre iguais.</em><br><br>
+
+<strong>Desejo, sinceramente, que aceite este convite.</strong><br><br>
+
+Creio que há em sua visão algo que merece ser ouvido — e talvez algo em mim que mereça ser contestado. O tempo, tão antigo quanto nós, dirá se nossos destinos devem caminhar juntos. Mas permita que ao menos nos conheçamos fora das máscaras e das cortes.<br><br>
+
+A cidade... está madura. E os que realmente a compreendem devem estar prontos para colher o que está prestes a cair.<br><br>
+
+Com a devida reverência que sua linhagem exige,<br>
+subscrevo-me,<br><br>
+
+<strong>Arnaldo Esteves<br>
+Senescal de Belo Horizonte<br>
+Clã Ventrue<br>
+<em>O Administrador das Sombras</em></strong>
+
+        </p>
+      </div>
+    </div>
+
+    <div class="voltar">
+      <a href="refugio_sebastian.html">← Voltar ao Refúgio</a>
+    </div>
+  </div>
+</body>
+</html>
