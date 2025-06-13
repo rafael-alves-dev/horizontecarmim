@@ -4,171 +4,421 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Refúgio de Valdeck</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
   <style>
     body {
-      background: url('img/fundos/floresta-noturna.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #e5e5dc;
+      margin: 0;
+      padding: 2rem;
       font-family: 'Segoe UI', sans-serif;
-      padding: 3rem 2rem;
+      background: url('img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
     }
 
-    .refugio-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      background-color: rgba(10, 10, 10, 0.88);
+* {
+  box-sizing: border-box;
+}
+
+    .refugio {
+      max-width: 1100px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
       padding: 2rem;
       border-radius: 12px;
-      border-left: 4px solid #4b5c2b;
-      border-right: 4px solid #4b5c2b;
-      box-shadow: 0 0 20px rgba(59, 66, 45, 0.5);
+      border: 2px solid #8a2be2;
     }
 
-    .refugio-container h2 {
+    h1 {
       font-family: 'Cinzel Decorative', serif;
-      color: #a0c49d;
-      font-size: 2rem;
+      color: #d0bdf4;
       text-align: center;
       margin-bottom: 2rem;
     }
 
-    .imagem-personagem {
-      text-align: center;
-      margin-bottom: 2rem;
+    .topo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
 
-    .imagem-personagem img {
-      width: 250px;
-      border-radius: 8px;
-      border: 2px solid #4b5c2b;
-      box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+    .foto-principal {
+      flex: 1;
+      max-width: 300px;
     }
 
-    .secao {
-      margin-bottom: 2.5rem;
-      background-color: rgba(255, 255, 255, 0.03);
-      border-left: 3px solid #4b5c2b;
-      padding: 1.5rem;
-      border-radius: 8px;
+    .foto-principal img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #ff003c;
+  box-shadow: 0 0 12px #ff003c;
+}
+
+    
+
+    .textos {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
     }
 
-    .secao h3 {
+    .bloco {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #ff003c;
+  box-shadow: 0 0 10px #ff003c;
+}
+
+
+    .bloco h2 {
       font-family: 'Cinzel Decorative', serif;
-      color: #c3e3b5;
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      color: #d0bdf4;
+      margin-bottom: 0.5rem;
+    }
+
+    .galeria {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .galeria img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #ff003c;
+  box-shadow: 0 0 8px #ff003c;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+    .galeria img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px #ff003c, 0 0 20px #ff003c inset;
+}
+
+    .correio {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .mensagens,
+    .formulario {
+      flex: 1;
+      min-width: 300px;
+      max-width: 48%;
+      box-sizing: border-box;
+    }
+
+    .mensagens h2,
+    .formulario h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: #d0bdf4;
       margin-bottom: 1rem;
     }
 
-    .secao p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #d4d4cc;
+    .mensagens button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.6rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
     }
 
-    .botao-voltar {
-      text-align: center;
-      margin-top: 2rem;
+    .formulario input,
+    .formulario textarea {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 0.8rem;
+      background-color: #1f1f1f;
+      border: 1px solid #8a2be2;
+      color: #fff;
+      border-radius: 5px;
     }
 
-    .botao-voltar a {
-      background-color: #3b5323;
+    .formulario input[type="file"] {
+      border: none;
+    }
+
+    .formulario button {
+      background-color: #8a2be2;
       color: white;
-      padding: 0.7rem 1.2rem;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
       border-radius: 6px;
       text-decoration: none;
-      font-weight: bold;
       font-family: 'Cinzel Decorative', serif;
-      transition: background 0.3s;
     }
 
-    .botao-voltar a:hover {
-      background-color: #577c39;
+    .voltar a:hover {
+      background-color: #a70000;
     }
 
+    #lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 3px solid #8a2be2;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+      animation: zoomIn 0.3s ease-out;
+      cursor: zoom-out;
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    /* ========== RESPONSIVO MOBILE ========== */
     @media (max-width: 768px) {
       body {
-        padding: 2rem 1rem;
+        overflow-x: hidden;
       }
 
-      .imagem-personagem img {
-        width: 200px;
+      .formulario {
+  overflow-x: hidden;
+}
+
+
+      .topo {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
       }
 
-      .refugio-container {
-        padding: 1.5rem;
+      .foto-principal {
+        max-width: 180px;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .textos {
+        width: 100%;
+        padding: 0 1rem;
+      }
+
+      .correio {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+      }
+
+      .mensagens,
+      .formulario {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .mensagens button,
+      .formulario input,
+      .formulario textarea,
+      .formulario button {
+        width: 100%;
+        font-size: 1rem;
+      }
+
+      .formulario input[type="file"] {
+  display: block;
+  max-width: 100%;
+  background-color: #1f1f1f;
+  color: #fff;
+  border: 1px solid #8a2be2;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+
+      .galeria {
+        flex-wrap: wrap;
+        justify-content: center;
       }
     }
+
+    .formulario {
+  overflow-x: hidden;
+}
+
+.formulario input[type="file"] {
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
   </style>
 </head>
-
 <body>
-  <div class="refugio-container">
-    <h2>Refúgio de Valdeck</h2>
+  <div class="refugio">
+    <h1>Refúgio de Valdeck</h1>
 
-    <div class="imagem-personagem">
-      <img src="img/valdeck.jpeg" alt="Valdeck Gangrel" />
+    <div class="topo">
+      <div class="foto-principal">
+        <img src="img/valdeck.jpeg" alt="Valdeck">
+      </div>
+
+      <div class="textos">
+        <div class="bloco">
+          <h2>O Sussurro Subterrâneo</h2>
+          <p>"As raízes tremem quando algo se mexe lá embaixo."<br><br>
+         "O vento que sopra da Galeria do Carmo traz cheiro de mofo e sangue seco."<br><br>
+         "Uma criatura marcada pelas cicatrizes do tempo me observa nos sonhos. Ela me chama... pelo nome que eu ainda não aceitei."<br><br>
+          </p>
+        </div>
+        <div class="bloco">
+          <h2>Palavras do Mestre</h2>
+          <p>Valdeck, uma trilha antiga se abre aos seus pés. Os lobos da serra não estão mais inquietos — estão esperando.<br> 
+            Algo enterrado na terra sob BH desperta... e reconhece você. Mas ainda não decidiu se como aliado... ou rival.<br> 
+            Escolha seus passos com sabedoria. Ouça as folhas. E fuja das luzes.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="secao">
-      <h3>Raízes na Terra</h3>
-      <p>
-        Nome: Valdeck <br>
-Clã: Gangrel<br>
+    <div class="galeria">
+      <img src="img/" alt="Foto 1" onclick="ampliarImagem(this)">
+      <img src="img/" alt="Foto 2" onclick="ampliarImagem(this)">
+      <img src="img/" alt="Foto 3" onclick="ampliarImagem(this)">
+    </div>
+
+    <div class="correio">
+      <div class="mensagens">
+        <h2>Mensagens Recebidas</h2>
+        <button onclick="window.location.href='carta_ar.html'"> Vazio</button>
+        <button onclick="window.location.href='carta_icaro.html'">vazio</button>
+        <button onclick="window.location.href='carta_elena.html'">vazio</button>
+      </div>
+
+      <div class="formulario">
+        <h2>Correio da Noite</h2>
+        <form action="https://formsubmit.co/rafaelalves013@gmail.com" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://rafael-alves-dev.github.io/horizontecarmim/obrigadov5.html">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+          <input type="text" name="destinatario" placeholder="Destinatário" required>
+          <textarea name="mensagem" rows="4" placeholder="Mensagem..." required></textarea>
+          <input type="file" name="anexo">
+          <button type="submit">Enviar Carta</button>
+        </form>
+      </div>
+    </div>
+
+    <br>
+<div class="bloco">
+          <h2>Raízes na Terra</h2>
+          <p>
+Clã: Gangrel <br>
 Geração: 11ª<br>
 Alinhamento: Independente (cortejado por Anarquistas e vigiado pela Camarilla)<br>
 Refúgio: Uma casa decrépita nas bordas da Mata do Jambeiro, entre Nova Lima e a região hospitalar de BH<br><br>
 
+Valdeck não nasceu em Belo Horizonte, mas foi chamado por ela — ou por algo que dorme sob seu concreto.<br>
+Durante anos, teve visões: raízes sangrentas, vozes antigas, montanhas que sussurravam em sonhos.<br> 
+Um chamado primal que o trouxe pelos trilhos do metrô, até se fixar nas matas esquecidas à margem da cidade.<br>
+Desde sua chegada, Valdeck tornou-se uma lenda entre os Membros que vivem nas sombras das avenidas. Selvagem, mas não irracional. Brutal, mas guiado por uma missão.<br> 
+Ele ignora os jogos sociais da Camarilla, o brilho sedutor dos Anarquistas no Barreiro, e vaga pelas beiradas da cidade como um fantasma de sangue.<br>
+Sua presença incomoda. A Princesa Doralice considera-o um risco — um animal fora da coleira. <br>
+Já Nocivo e Jeniffer, líderes anarquistas, veem nele um trunfo: um emissário do instinto que a Camarilla tenta sufocar. Mas Valdeck não é facilmente domesticado.<br><br>
 
-Valdeck não nasceu em Belo Horizonte, mas foi chamado por ela — ou por algo que dorme sob seu concreto. <br>
-Durante anos, teve visões: raízes sangrentas, vozes antigas, montanhas que sussurravam em sonhos. Um chamado primal que o trouxe pelos trilhos do metrô, até se fixar nas matas esquecidas à margem da cidade.<br>
-
-Desde sua chegada, Valdeck tornou-se uma lenda entre os Membros que vivem nas sombras das avenidas. Selvagem, mas não irracional. Brutal, mas guiado por uma missão. Ele ignora os jogos sociais da Camarilla, o brilho sedutor dos Anarquistas no Barreiro, e vaga pelas beiradas da cidade como um fantasma de sangue.<br>
-
-Sua presença incomoda. A Princesa Doralice considera-o um risco — um animal fora da coleira. Já Nocivo e Jeniffer, líderes anarquistas, veem nele um trunfo: um emissário do instinto que a Camarilla tenta sufocar. Mas Valdeck não é facilmente domesticado.<br><br><br>
 
 Conexões com o Sobrenatural<br>
-
-Valdeck sente que há algo enterrado sob Belo Horizonte, nas ruínas coloniais, sob igrejas barrocas rachadas e cavernas que ninguém ousa mapear. Algo velho, talvez anterior à presença dos próprios Membros. Seus sonhos são povoados por rituais indígenas distorcidos, ossos sussurrantes, e rostos ancestrais petrificados.<br>
-
-Teve encontros enigmáticos com Lupinos da Serra do Cipó. A morte parecia certa, mas veio o silêncio... e um estranho respeito mútuo. Há quem diga que os espíritos da mata o reconhecem. Talvez ele carregue algo mais que Vitae no sangue...<br><br>
-
+Valdeck sente que há algo enterrado sob Belo Horizonte, nas ruínas coloniais, sob igrejas barrocas rachadas e cavernas que ninguém ousa mapear. Algo velho, talvez anterior à presença dos próprios Membros.<br> Seus sonhos são povoados por rituais indígenas distorcidos, ossos sussurrantes, e rostos ancestrais petrificados.<br>
+Teve encontros enigmáticos com Lupinos da Serra do Cipó. A morte parecia certa, mas veio o silêncio... e um estranho respeito mútuo.<br> 
+Há quem diga que os espíritos da mata o reconhecem. Talvez ele carregue algo mais que Vitae no sangue...<br><br>
 
 Motivações Atuais<br>
-
 Investigar os sussurros antigos sob a cidade — algo que o instinto diz ser maior que qualquer seita.<br>
-
 Proteger o que resta da natureza, inclusive contra outros Membros.<br>
-
 Decidir se aliar a um dos lados — Camarilla ou Anarquistas — ou criar um terceiro caminho.<br>
-
 Dominar a Besta interior e talvez usá-la como bússola espiritual.<br>
+Desvendar seus próprios sonhos, antes que se tornem presságios irreversíveis.</p>
+        </div>
 
-Desvendar seus próprios sonhos, antes que se tornem presságios irreversíveis.<br>
-      </p>
-    </div>
-
-    <div class="secao">
-      <h3>O Sussurro Subterrâneo</h3>
-      <p>
-        "As raízes tremem quando algo se mexe lá embaixo."<br><br>
-        "O vento que sopra da Galeria do Carmo traz cheiro de mofo e sangue seco."<br><br>
-        "Uma criatura marcada pelas cicatrizes do tempo me observa nos sonhos. Ela me chama... pelo nome que eu ainda não aceitei."
-      </p>
-    </div>
-
-    <div class="secao">
-      <h3>Palavras do Narrador</h3>
-      <p>
-        Valdeck, uma trilha antiga se abre aos seus pés. Os lobos da serra não estão mais inquietos — estão esperando.<br><br>
-        Algo enterrado na terra sob BH desperta... e reconhece você. Mas ainda não decidiu se como aliado... ou rival.<br><br>
-        Escolha seus passos com sabedoria. Ouça as folhas. E fuja das luzes.
-      </p>
-    </div>
-
-    <div class="botao-voltar">
-      <a href="valdeck.html">Voltar à Superfície</a>
+    <div class="voltar">
+      <a href="valdeck.html">← Voltar à Superfície</a>
     </div>
   </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img src="" alt="Imagem ampliada">
+  </div>
+
+  <script>
+    function ampliarImagem(elemento) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+      lightboxImg.src = elemento.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === "Escape") closeLightbox();
+    });
+  </script>
+
+<script>
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+      const form = document.querySelector('form');
+      if (form) form.reset();
+    }
+  });
+</script>
+
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.reset();
+    }, 100); // pequena pausa para garantir que o envio ocorra antes de resetar
+  });
+</script>
+
 </body>
 </html>

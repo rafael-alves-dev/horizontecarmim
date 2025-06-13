@@ -386,5 +386,24 @@ Assim aprendi que, quando a Camarilla chama, devemos ir sem questionar e fazer c
       if (e.key === "Escape") closeLightbox();
     });
   </script>
+
+<script>
+  window.addEventListener('pageshow', function(event) {
+    if (event.persisted || performance.getEntriesByType("navigation")[0].type === "back_forward") {
+      const form = document.querySelector('form');
+      if (form) form.reset();
+    }
+  });
+</script>
+
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.reset();
+    }, 100); // pequena pausa para garantir que o envio ocorra antes de resetar
+  });
+</script>
+
 </body>
 </html>
