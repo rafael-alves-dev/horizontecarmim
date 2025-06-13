@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta de Celeste</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('img/fundo_carta_desk.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    .mensagem-container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #8a2be2;
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #d0bdf4;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .mensagem-conteudo {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .foto-remetente {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background-color: #000;
+      border-radius: 8px;
+      border: 2px solid #8a2be2;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+    }
+
+    .mensagem-texto {
+      background-color: rgba(255,255,255,0.05);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      border-left: 4px solid #8a2be2;
+      line-height: 1.6;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    .mensagem-texto p {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .voltar a:hover {
+      background-color: #a70000;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      body {
+        background: url('img/fundo_carta_mobile.png') no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      .mensagem-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mensagem-texto {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mensagem-container">
+    <h1>Convite de Celeste</h1>
+    <div class="mensagem-conteudo">
+      <img src="img/celeste_original.png" alt="Sybella" class="foto-remetente">
+      <div class="mensagem-texto">
+        <p>
+          <strong>De Celeste Deveras, Zeladora do Elísio</strong><br><br>
+
+<strong>Para Papus,
+Guardião dos Silêncios Antigos,</strong><br>
+
+<br>
+Dizem que a arte é um espelho da alma.
+Outros, mais céticos, dizem que é apenas um reflexo do ego.
+<i>Eu prefiro acreditar que ela é um convite.</i>
+
+<br><br>
+
+Na próxima lua crescente, abrirei as portas de minha galeria para uma exposição privada:
+<b>“Fragmentos do Inominável — Sombras que Pintam a Eternidade.”</b>
+Uma noite para poucos. Os olhos certos, os ouvidos atentos, as bocas seladas.
+
+<br><br>
+
+Sei que <i>não é seu hábito</i> frequentar salões de arte,
+e posso imaginar seu olhar cético agora, talvez até um leve sorriso.
+Mas lhe asseguro — esta noite não é sobre quadros.
+<b>É sobre encontros.</b> Sobre aqueles que, como você, caminham entre os véus do que é oculto e do que ainda está por ser revelado.
+
+<br><br>
+
+Uma presença em especial requisitou minha intermediação.
+<i>Uma voz antiga.</i> Elegante, inquisitiva e surpreendentemente curiosa sobre os rumos de Belo Horizonte.
+Disse que desejava conhecer “o mago que ainda não escolheu sua torre”.
+Talvez você encontre nela mais do que uma conversa... talvez encontre um propósito.
+
+<br><br>
+
+A noite começará às 22h, no endereço habitual.
+Haverá vinho — para os que ainda fingem deleite — e silêncio, para os que preferem escutar o que não é dito.
+
+<br><br>
+
+<i>Não aceite pelo convite.
+Aceite pela dúvida.</i>
+
+<br><br>
+
+<b>Com admiração velada,</b>
+<br>
+<i>Celeste Deveras</i>
+<br>
+<b>Zeladora do Elísio</b>
+<br>
+<small>“Nem todos os quadros precisam de moldura para prender o olhar.”</small>
+
+
+
+        </p>
+      </div>
+    </div>
+
+    <div class="voltar">
+      <a href="refugio_papus.html">← Voltar ao Refúgio</a>
+    </div>
+  </div>
+</body>
+</html>
