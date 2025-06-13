@@ -416,6 +416,16 @@ Personalidade:<br>
   });
 </script>
 
+<script>
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function () {
+    setTimeout(() => {
+      form.reset();
+    }, 100); // pequena pausa para garantir que o envio ocorra antes de resetar
+  });
+</script>
+
+
 
 </body>
 </html>
