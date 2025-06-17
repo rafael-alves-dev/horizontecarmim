@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta de Ivan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('img/fundo_carta_desk.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    .mensagem-container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #8a2be2;
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #d0bdf4;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .mensagem-conteudo {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .foto-remetente {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background-color: #000;
+      border-radius: 8px;
+      border: 2px solid #8a2be2;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+    }
+
+    .mensagem-texto {
+      background-color: rgba(255,255,255,0.05);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      border-left: 4px solid #8a2be2;
+      line-height: 1.6;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    .mensagem-texto p {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .voltar a:hover {
+      background-color: #a70000;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      body {
+        background: url('img/fundo_carta_mobile.png') no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      .mensagem-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mensagem-texto {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mensagem-container">
+    <h1>Convite de Arnaldo</h1>
+    <div class="mensagem-conteudo">
+      <img src="img/arnaldo.png" alt="Arnaldo" class="foto-remetente">
+      <div class="mensagem-texto">
+        <p>
+          <p><i>Ao estimado Sebastian,</i></p>
+
+<p>Fico satisfeito ao saber que seus olhos permanecem atentos aos movimentos sutis que ondulam sob nossa cidade.</p>
+
+<p>Embora o fenômeno na Savassi seja digno de nota — e curioso em sua natureza — <b>não há necessidade de alarme imediato</b>. Os subterrâneos, como bem sabe, são domínio de <b>Severino Magro</b>. É ele quem detém a sensibilidade mais aguçada para os sussurros da terra e os tremores do que jaz abaixo.</p>
+
+<p><i>Enviarei uma mensagem ao Nosferatu para colher impressões mais precisas</i>. Se houver algo além da superfície, seremos os primeiros a saber. Até lá, recomendo prudência — e discrição.</p>
+
+<p><i>Com estima e respeito,</i><br>
+<b>Arnaldo Esteves</b><br>
+<i>Senescal da Camarilla</i></p>
+
+
+        </p>
+      </div>
+    </div>
+
+    <div class="voltar">
+      <a href="refugio_sebastian.html">← Voltar ao Refúgio</a>
+    </div>
+  </div>
+</body>
+</html>
