@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Carta de Sebastian</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('img/fundo_carta_desk.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    .mensagem-container {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #8a2be2;
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      color: #d0bdf4;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .mensagem-conteudo {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .foto-remetente {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      background-color: #000;
+      border-radius: 8px;
+      border: 2px solid #8a2be2;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+    }
+
+    .mensagem-texto {
+      background-color: rgba(255,255,255,0.05);
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      border-left: 4px solid #8a2be2;
+      line-height: 1.6;
+      font-size: 1rem;
+      flex: 1;
+    }
+
+    .mensagem-texto p {
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .voltar a {
+      background-color: #8B0000;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-family: 'Cinzel Decorative', serif;
+    }
+
+    .voltar a:hover {
+      background-color: #a70000;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      body {
+        background: url('img/fundo_carta_mobile.png') no-repeat center center fixed;
+        background-size: cover;
+      }
+
+      .mensagem-conteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .mensagem-texto {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="mensagem-container">
+    <h1>Carta de Sebastian</h1>
+    <div class="mensagem-conteudo">
+      <img src="img/sebastian.jpeg" alt="Sebastian" class="foto-remetente">
+      <div class="mensagem-texto">
+        <p>
+          <strong>Para a estimada Mirela,<br>
+A bruxa carmesim,<br><br><br>
+
+
+<p><strong>Boa noite, nobre Mirela.</strong></p>
+
+<p>A cada hora que passa, percebo que os olhos em torno da cidade estão cada vez mais a observar-me; mas espero que tenha tido sucesso em obter alguma resposta sobre as informações que contém nesse telefone.</p>
+
+<p>Vale lembrar que não devemos deixar cair em mãos erradas esse aparelho. Pois sabemos que no castelo da Camarilla existem tijolos que estão sendo removidos, bocas que sussurram pelos corredores da política.</p>
+
+<p>Mas em breve estarei regindo meu lugar ao trono e reforço minha aliança em deixá-la em uma posição na Camarilla que todo Tremere merece.</p>
+
+<p><em>Atenciosamente,</em><br>
+<strong>Sebastian — Ventrue</strong></p>
+
+      </div>
+    </div>
+
+    <div class="voltar">
+      <a href="refugio_mirela.html">← Voltar ao Refúgio</a>
+    </div>
+  </div>
+</body>
+</html>
