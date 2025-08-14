@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabinne Lunatha</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background: #111 url('../img/fundo.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.6); /* mais translúcido */
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 3px solid #8a2be2;
+      border-right: 3px solid #8a2be2;
+      box-shadow: 0 0 20px rgba(138, 43, 226, 0.3); /* roxo V5 */
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2.5rem;
+      color: #c92020;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .perfil {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .imagem-container {
+      flex: 1;
+      text-align: center;
+    }
+
+    .imagem-retrato {
+      width: 100%;
+      max-width: 380px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid #8a2be2;
+      box-shadow: 0 0 15px rgba(138, 43, 226, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .imagem-retrato:hover {
+      transform: scale(1.03);
+    }
+
+    .descricao {
+      flex: 2;
+    }
+
+    .descricao p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .galeria {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .galeria img {
+      width: 28%;
+      max-width: 260px;
+      border-radius: 8px;
+      border: 2px solid #444;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.04);
+      border-color: #8a2be2;
+    }
+
+    .botao-voltar {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .botao-voltar a {
+      background-color: #8a2be2;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Cinzel Decorative', serif;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease;
+    }
+
+    .botao-voltar a:hover {
+      background-color: #a259ff;
+    }
+
+    /* MODAL */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+    }
+
+    .modal-conteudo {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #fff;
+      border: 2px solid white;
+    }
+
+    .fechar {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #f0f0f0;
+      font-size: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .perfil {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .galeria img {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Sabine Lunatha</h1>
+
+    <div class="perfil">
+      <div class="imagem-container">
+        <img src="../img/sabinne1.jpeg" alt="Beatriz" class="imagem-retrato" onclick="abrirModal(this)">
+      </div>
+
+      <div class="descricao">
+        <p>
+          
+Clã: Malkavian <br>
+Status: Ignorada pela Camarilla (até então)<br>
+Alcunha: A Criança Queimada<br><br>
+
+Histórico Conhecido:<br>
+
+Sabinne Lunatha surgiu em Belo Horizonte sem aviso, mas não sem convite. Dizem que foi trazida discretamente de Barbacena pela própria Princesa Doralice — o motivo, porém, ninguém ousa perguntar.
+
+Pequena, de feições infantis e olhar distante, Sabinne costuma ser vista em cemitérios, creches abandonadas e túneis esquecidos da cidade. Quase sempre sozinha… quase sempre cantando.
+
+Fala pouco com outros Membros. Quando fala, suas palavras vêm como enigmas, memórias partidas ou canções de ninar que ninguém lembra de ter aprendido.
+
+Carrega sempre uma boneca chamuscada chamada Lúmina, que parece mudar de expressão de tempos em tempos — ou talvez seja só imaginação.
+
+Embora a maioria a trate como inofensiva, há quem diga que ela vê coisas que os outros não veem.
+E que escuta sussurros de lugares onde ninguém mais ousa ouvir.<br>
+
+
+
+
+        </p>
+      </div>
+    </div>
+
+    <div class="galeria">
+      <img src="../img/sabinne1.jpeg" alt="Foto 1" onclick="abrirModal(this)">
+      <img src="../img/sabinne2.jpeg" alt="Foto 2" onclick="abrirModal(this)">
+      <img src="../img/sabinne3.jpeg" alt="Foto 3" onclick="abrirModal(this)">
+    </div>
+
+    <div class="botao-voltar">
+      <a href="../elenco_sombrio.html">← Voltar</a>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalImagem" class="modal">
+    <span class="fechar" onclick="fecharModal()">&times;</span>
+    <img class="modal-conteudo" id="imagemAmpliada">
+  </div>
+
+  <script>
+    function abrirModal(img) {
+      const modal = document.getElementById("modalImagem");
+      const modalImg = document.getElementById("imagemAmpliada");
+      modalImg.src = img.src;
+      modal.style.display = "block";
+    }
+
+    function fecharModal() {
+      document.getElementById("modalImagem").style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("modalImagem");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
