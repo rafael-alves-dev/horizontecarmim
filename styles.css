@@ -1,14 +1,14 @@
-/* ===== HEADER + MENU (MOBILE FIRST) ===== */
+/* ===== HEADER + MENU (MOBILE FIRST) — FIX ===== */
 
-/* Header acima de qualquer overlay do hero */
-header {
+/* Header acima do conteúdo/overlays */
+header{
   position: relative;
   z-index: 1000;
   background: rgba(0,0,0,.6);
   padding: 1rem 1.25rem;
 }
 
-nav {
+nav{
   position: relative;
   display: flex;
   align-items: center;
@@ -17,8 +17,8 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Botão hambúrguer (sempre clicável) */
-#menu-toggle {
+/* Botão hambúrguer (visível só no mobile) */
+#menu-toggle{
   display: block;
   background: none;
   border: 0;
@@ -27,47 +27,45 @@ nav {
   line-height: 1;
   cursor: pointer;
   position: relative;
-  z-index: 1001; /* acima do menu e do hero */
+  z-index: 1001; /* acima do menu/hero */
 }
 
 /* Menu fechado por padrão no mobile */
-#menu {
+#menu{
   display: none;
   list-style: none;
   margin: 0;
   padding: 12px 16px;
-  position: absolute;
+  position: absolute;     /* dropdown no mobile */
   left: 0;
   right: 0;
-  top: calc(100% + 8px);
+  top: calc(100% + 8px);  /* logo abaixo do header */
   background: rgba(0,0,0,.92);
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0,0,0,.45);
   z-index: 1000;
 }
 
-/* Abre quando o JS aplica .open */
-#menu.open {
+#menu.open{
   display: flex !important;
   flex-direction: column;
   gap: 12px;
 }
 
-#menu li a {
+#menu li a{
   color: #f0f0f0;
   text-decoration: none;
   font-weight: 600;
 }
 
-#menu li a:hover {
-  color: #8B0000;
-}
+#menu li a:hover{ color:#8B0000; }
 
-/* Desktop: menu sempre visível em linha, sem dropdown */
-@media (min-width: 900px) {
-  #menu {
-    position: static;
-    display: flex !important;
+/* ===== DESKTOP (>=900px): menu fixo em linha e esconde o hambúrguer ===== */
+@media (min-width: 900px){
+  #menu-toggle{ display: none; }  /* some o botão */
+  #menu{
+    position: static;             /* sai do absolute */
+    display: flex !important;     /* sempre visível */
     flex-direction: row;
     gap: 16px;
     background: transparent;
@@ -75,6 +73,11 @@ nav {
     box-shadow: none;
   }
 }
+
+/* Evita overlays do hero bloquearem cliques (não afeta o fundo do body) */
+.intro-container::before,
+.intro-container::after{ pointer-events: none; }
+
 
 /* Evita que overlays do hero bloqueiem cliques no header/menu */
 .intro-container::before,
