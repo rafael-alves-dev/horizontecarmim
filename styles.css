@@ -1,103 +1,87 @@
-/* Reset e estilo base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===== HEADER + MENU (MOBILE FIRST) ===== */
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #f0f0f0;
-  background: url('img/fundo.png') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-}
-
-/* ===== Cabeçalho e Menu (corrigido) ===== */
+/* Header acima de qualquer overlay do hero */
 header {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem 2rem;
-  position: relative;   /* garante layering acima do hero */
+  position: relative;
   z-index: 1000;
+  background: rgba(0,0,0,.6);
+  padding: 1rem 1.25rem;
 }
 
 nav {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
-nav h1 {
-  font-size: 2.4rem;
-  font-family: 'Cinzel Decorative', serif;
-  color: #8B0000;
-  letter-spacing: 1px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-}
-
-/* Botão hambúrguer */
-.menu-toggle {
-  display: none;
+/* Botão hambúrguer (sempre clicável) */
+#menu-toggle {
+  display: block;
   background: none;
-  border: none;
-  font-size: 2rem;
+  border: 0;
   color: #f0f0f0;
+  font-size: 28px;
+  line-height: 1;
   cursor: pointer;
   position: relative;
-  z-index: 1001;  /* acima do menu e de possíveis overlays */
+  z-index: 1001; /* acima do menu e do hero */
 }
 
-/* Menu (usando #menu, compatível com o JS .open) */
+/* Menu fechado por padrão no mobile */
 #menu {
-  display: flex;
+  display: none;
   list-style: none;
-  gap: 1.5rem;
   margin: 0;
-  padding: 0;
+  padding: 12px 16px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  background: rgba(0,0,0,.92);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.45);
+  z-index: 1000;
+}
+
+/* Abre quando o JS aplica .open */
+#menu.open {
+  display: flex !important;
+  flex-direction: column;
+  gap: 12px;
 }
 
 #menu li a {
   color: #f0f0f0;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+  font-weight: 600;
 }
 
 #menu li a:hover {
   color: #8B0000;
 }
 
-/* --- Mobile --- */
-@media (max-width: 768px) {
-  .menu-toggle { display: block; }
-
-  /* fechado por padrão no mobile */
+/* Desktop: menu sempre visível em linha, sem dropdown */
+@media (min-width: 900px) {
   #menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    margin-top: 1rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 1rem;
-    border-radius: 10px;
-    position: absolute;
-    top: calc(100% + 8px); /* logo abaixo do header/nav */
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    position: static;
+    display: flex !important;
+    flex-direction: row;
+    gap: 16px;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
   }
-
-  /* aberto quando o JS aplica .open */
-  #menu.open { display: flex; }
-
-  #menu li { margin: 0.5rem 0; }
 }
 
-/* Evita overlays bloqueando clique do botão/menu */
+/* Evita que overlays do hero bloqueiem cliques no header/menu */
 .intro-container::before,
-.intro-container::after { pointer-events: none; }
+.intro-container::after {
+  pointer-events: none;
+}
+
 
 
 /* Seção de introdução */
