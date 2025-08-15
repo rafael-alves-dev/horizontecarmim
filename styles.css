@@ -13,23 +13,16 @@ body {
   min-height: 100vh;
 }
 
-/* Cabeçalho e menu */
+/* ===== Cabeçalho e Menu (corrigido) ===== */
 header {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1rem 2rem;
+  position: relative;   /* garante layering acima do hero */
+  z-index: 1000;
 }
-
-.subtexto-npc {
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.4rem !important;
-  color: #ccc;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-}
-
-
 
 nav {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,23 +37,7 @@ nav h1 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
-
-nav ul li a {
-  color: #f0f0f0;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #8B0000;
-}
-
+/* Botão hambúrguer */
 .menu-toggle {
   display: none;
   background: none;
@@ -68,14 +45,36 @@ nav ul li a:hover {
   font-size: 2rem;
   color: #f0f0f0;
   cursor: pointer;
+  position: relative;
+  z-index: 1001;  /* acima do menu e de possíveis overlays */
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+/* Menu (usando #menu, compatível com o JS .open) */
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
 
-  nav ul {
+#menu li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+#menu li a:hover {
+  color: #8B0000;
+}
+
+/* --- Mobile --- */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  /* fechado por padrão no mobile */
+  #menu {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -83,16 +82,23 @@ nav ul li a:hover {
     background-color: rgba(0, 0, 0, 0.8);
     padding: 1rem;
     border-radius: 10px;
+    position: absolute;
+    top: calc(100% + 8px); /* logo abaixo do header/nav */
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
 
-  nav ul.active {
-    display: flex;
-  }
+  /* aberto quando o JS aplica .open */
+  #menu.open { display: flex; }
 
-  nav ul li {
-    margin: 0.5rem 0;
-  }
+  #menu li { margin: 0.5rem 0; }
 }
+
+/* Evita overlays bloqueando clique do botão/menu */
+.intro-container::before,
+.intro-container::after { pointer-events: none; }
+
 
 /* Seção de introdução */
 .intro {
